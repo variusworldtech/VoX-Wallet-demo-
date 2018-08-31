@@ -69,18 +69,32 @@
         </style>
     </head>
     <body>
-      @yield('content')
-            <footer id="footer">
-                Copyright &copy; 2015 Material Admin
+        <!-- Page Loader -->
+        <div id="page-loader">
+            <div class="preloader preloader--xl preloader--light">
+                <svg viewBox="25 25 50 50">
+                    <circle cx="50" cy="50" r="20" />
+                </svg>
+            </div>
+        </div>
+        <!-- Header -->
 
-                <ul class="footer__menu">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Dashboard</a></li>
-                    <li><a href="">Reports</a></li>
-                    <li><a href="">Support</a></li>
-                    <li><a href="">Contact</a></li>
-                </ul>
-            </footer>
+        @include('partials.header')
+        <section id="main">
+            @include('partials.navigation')
+            @yield('content')
+        </section>
+        <footer id="footer">
+            Copyright &copy; 2015 Material Admin
+
+            <ul class="footer__menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">Dashboard</a></li>
+                <li><a href="">Reports</a></li>
+                <li><a href="">Support</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </footer>
     </body>
 
 

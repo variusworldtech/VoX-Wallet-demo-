@@ -1,11 +1,10 @@
-      <header id="header">
+        <header id="header">
             <div class="logo">
                 <a href="index.html" class="hidden-xs">
                     <img src="https://www.variusworldtech.com/images/varius_world_tech-logo.png" style="max-width: 200px;">
                 </a>
                 <i class="logo__trigger zmdi zmdi-menu" data-mae-action="block-open" data-mae-target="#navigation"></i>
             </div>
-
             <ul class="top-menu">
                 <li class="top-menu__trigger hidden-lg hidden-md">
                     <a href=""><i class="zmdi zmdi-search"></i></a>
