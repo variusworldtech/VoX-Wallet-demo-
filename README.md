@@ -1,0 +1,2 @@
+# VoX-Wallet
+VoX Wallet
