@@ -1,3 +1,4 @@
+            <?php $uri = $_SERVER['REQUEST_URI'];?>
             <aside id="navigation">
                 <div class="navigation__header">
                     <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
@@ -5,17 +6,30 @@
 
                 <div class="navigation__menu c-overflow">
                     <ul>
-                        <li class="navigation__active">
+                        <li <?php if ($uri == "/") {echo(' class="navigation__active"');} ?> >
                             <a href="/"><i class="zmdi zmdi-home"></i>Dashboard</a>
                         </li>
-                        <li><a href="/deposit"><i class="zmdi zmdi-format-underlined"></i> Deposit</a></li>
-                        <li><a href="widgets.html"><i class="zmdi zmdi-widgets"></i> Withdraw</a></li>
-                        <li><a href="widgets.html"><i class="zmdi zmdi-widgets"></i> Send</a></li>
-                        <li><a href="widgets.html"><i class="zmdi zmdi-widgets"></i> Crypto</a></li>
-                        <li><a href="widgets.html"><i class="zmdi zmdi-widgets"></i> Banks and cards</a></li>
-                        <li><a href="widgets.html"><i class="zmdi zmdi-widgets"></i> Transactions</a></li>
-                        <li><a href="widgets.html"><i class="zmdi zmdi-widgets"></i> Settings</a></li>
-                        <li><a href="widgets.html"><i class="zmdi zmdi-widgets"></i> Help</a></li>
+                        <li <?php if ($uri == "/deposit") {echo(' class="navigation__active"');} ?>>
+                            <a href="/deposit"><i class="zmdi zmdi-format-underlined"></i> Deposit</a>
+                        </li>
+                        <li <?php if ($uri == "/withdraw") {echo(' class="navigation__active"');} ?>>
+                            <a href="widgets.html"><i class="zmdi zmdi-widgets"></i> Withdraw</a>
+                        </li>
+                        <li <?php if ($uri == "/send") {echo(' class="navigation__active"');} ?>>
+                            <a href="widgets.html"><i class="zmdi zmdi-widgets"></i> Send</a>
+                        </li>
+                        <li  <?php if ($uri == "/card") {echo(' class="navigation__active"');} ?>>
+                            <a href="widgets.html"><i class="zmdi zmdi-widgets"></i> VoX Card</a>
+                        </li>
+                        <li>
+                            <a href="widgets.html"><i class="zmdi zmdi-widgets"></i> Transactions</a>
+                        </li>
+                        <li>
+                            <a href="widgets.html"><i class="zmdi zmdi-widgets"></i> Settings</a>
+                        </li>
+                        <li>
+                            <a href="widgets.html"><i class="zmdi zmdi-widgets"></i> Help</a>
+                        </li>
 
                         <!-- <li class="navigation__sub">
                             <a href="" data-mae-action="submenu-toggle"><i class="zmdi zmdi-view-list"></i> Tables</a>
