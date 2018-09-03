@@ -38,3 +38,6 @@ Route::get('/transactions', function () {
 Route::get('/settings', function () {
     return view('settings');
 });
+Route::get('/profile', function () {
+    return view('profile-timeline');
+});
