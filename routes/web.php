@@ -29,6 +29,3 @@ Route::get('/transactions', function () {
 Route::get('/settings', function () {
     return view('settings');
 });
-Route::get('/', function () {
-    return view('index');
-});
