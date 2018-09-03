@@ -14,18 +14,27 @@
 Route::get('/', function () {
     return view('index');
 });
+
 Route::get('/deposit', function () {
     return view('deposit');
 });
+
 Route::get('/withdraw', function () {
     return view('withdraw');
 });
+
+Route::get('/withdrawNoFunds', function () {
+    return view('withdrawNoFunds');
+});
+
 Route::get('/send', function () {
     return view('send');
 });
+
 Route::get('/transactions', function () {
     return view('transactions');
 });
+
 Route::get('/settings', function () {
     return view('settings');
 });

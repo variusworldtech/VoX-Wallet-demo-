@@ -1,6 +1,6 @@
-        <header id="header">
+        <header id="header" class="content__header" style="padding-top: 30px;">>
             <div class="logo">
-                <a href="index.html" class="hidden-xs">
+                <a href="/index" class="hidden-xs">
                     <img src="https://www.variusworldtech.com/images/varius_world_tech-logo.png" style="max-width: 200px;">
                 </a>
                 <i class="logo__trigger zmdi zmdi-menu" data-mae-action="block-open" data-mae-target="#navigation"></i>

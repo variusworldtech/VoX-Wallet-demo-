@@ -1,6 +1,6 @@
         @extends('layouts.app')
         @section('content')
-            <section id="content" style="padding-top: 20px;">
+            
                 <div class="card">
                     <div class="card__header">
                         <h2>Sales Statistics <small>Vestibulum purus quam scelerisque, mollis nonummy metus</small></h2>

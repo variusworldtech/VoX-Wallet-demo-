@@ -12,17 +12,17 @@
                         <li <?php if ($uri == "/deposit") {echo(' class="navigation__active"');} ?>>
                             <a href="/deposit"><i class="zmdi zmdi-format-underlined"></i> Deposit</a>
                         </li>
-                        <li <?php if ($uri == "/withdraw") {echo(' class="navigation__active"');} ?>>
-                            <a href="/withdraw"><i class="zmdi zmdi-widgets"></i> Withdraw</a>
+                        <li <?php if ($uri == "/withdrawNoFunds") {echo(' class="navigation__active"');} ?>>
+                            <a href="/withdrawNoFunds"><i class="zmdi zmdi-widgets"></i> Withdraw</a>
                         </li>
                         <li <?php if ($uri == "/send") {echo(' class="navigation__active"');} ?>>
-                            <a href="widgets.html"><i class="zmdi zmdi-widgets"></i> Send</a>
+                            <a href="/send"><i class="zmdi zmdi-widgets"></i> Send</a>
                         </li>
                         <li  <?php if ($uri == "/card") {echo(' class="navigation__active"');} ?>>
-                            <a href="widgets.html"><i class="zmdi zmdi-widgets"></i> VoX Card</a>
+                            <a href="/card"><i class="zmdi zmdi-widgets"></i> VoX Card</a>
                         </li>
-                        <li>
-                            <a href="widgets.html"><i class="zmdi zmdi-widgets"></i> Transactions</a>
+                        <li  <?php if ($uri == "/transactions") {echo(' class="navigation__active"');} ?>>
+                            <a href="/transactions"><i class="zmdi zmdi-widgets"></i>Transactions</a>
                         </li>
                         <li <?php if ($uri == "/settings") {echo(' class="navigation__active"');} ?>>
                             <a href="/settings"><i class="zmdi zmdi-widgets"></i> Settings</a>

@@ -2,9 +2,8 @@
         @section('content')
 
                 <section id="content">
-                    <header class="content__header">
-                     <h1>Deposit methods</h1>
-                            <!-- <div class="actions">
+                    <header class="content__header"><h1>Send methods</h1></header>
+                        <!-- <div class="actions">
                             <a href=""><i class="zmdi zmdi-check-all"></i></a>
                             <a href=""><i class="zmdi zmdi-trending-up"></i></a>
                             <div class="dropdown">
@@ -16,7 +15,6 @@
                                 </ul>
                             </div>
                         </div> -->
-                    </header>
                     <div id="content__grid" data-columns>
 
                         <!-- Picture List -->

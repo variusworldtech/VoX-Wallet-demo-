@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Material Admin</title>
+        <title>VoX Wallet</title>
 
         <!-- Vendors -->
 
@@ -65,6 +65,7 @@
           user-select: none;
           padding: 10px 45px;
           margin-bottom: 0px;
+
       }
         </style>
     </head>
@@ -80,9 +81,12 @@
         <!-- Header -->
 
         @include('partials.header')
+
         <section id="main">
             @include('partials.navigation')
+            <header class="content__header" style="padding-top: 60px;">
             @yield('content')
+
         </section>
         <footer id="footer">
             Copyright &copy; 2015 Material Admin
