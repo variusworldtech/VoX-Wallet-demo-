@@ -100,8 +100,25 @@
                                         2 to 5 days
                                     </small>
                                 </h2>
+                            </div>
+                                </br>
+                                <a href="/depositByCard" class="btn btn-sm btn-default" role="button">Button</a>
+                                <!-- <div id="app">
+                                    <checkout-form></checkout-form>
+                                </div> -->
+                                <script src="https://checkout.stripe.com/checkout.js"> 
+                                </script>
+                                <!-- <script src="/js/app.js"></script>  -->               
 
-                                <a href="" class="btn btn-sm btn-default" role="button">Button</a>
+
+                                        <!-- data-key="pk_test_ov1Rp6ksiecTl3Q8xe6aqNdJ"
+                                        data-amount="999"
+                                        data-name="Shirl"
+                                        data-description="Example charge"
+                                        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                                        data-locale="auto"
+                                        data-currency="gbp"> -->
+                                <!-- <a href="" class="btn btn-sm btn-default" role="button">Button</a> -->
 
                                 <!-- <div class="actions">
                                     <div class="dropdown">
