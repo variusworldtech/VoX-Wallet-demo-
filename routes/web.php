@@ -26,6 +26,11 @@ Route::get('/send', function () {
 Route::get('/transactions', function () {
     return view('transactions');
 });
+
+Route::get('/card', function () {
+    return view('card');
+});
+
 Route::get('/settings', function () {
     return view('settings');
 });
