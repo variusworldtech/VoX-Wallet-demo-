@@ -2,9 +2,8 @@
         @section('content')
 
                 <section id="content">
-                    <header class="content__header">
-                     <h1>Deposit methods</h1>
-                            <!-- <div class="actions">
+                    <header class="content__header"><h1>Send methods</h1>
+                        <!-- <div class="actions">
                             <a href=""><i class="zmdi zmdi-check-all"></i></a>
                             <a href=""><i class="zmdi zmdi-trending-up"></i></a>
                             <div class="dropdown">
@@ -100,25 +99,8 @@
                                         2 to 5 days
                                     </small>
                                 </h2>
-                            </div>
-                                </br>
-                                <a href="/depositByCard" class="btn btn-sm btn-default" role="button">Button</a>
-                                <!-- <div id="app">
-                                    <checkout-form></checkout-form>
-                                </div> -->
-                                <script src="https://checkout.stripe.com/checkout.js"> 
-                                </script>
-                                <!-- <script src="/js/app.js"></script>  -->               
 
-
-                                        <!-- data-key="pk_test_ov1Rp6ksiecTl3Q8xe6aqNdJ"
-                                        data-amount="999"
-                                        data-name="Shirl"
-                                        data-description="Example charge"
-                                        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-                                        data-locale="auto"
-                                        data-currency="gbp"> -->
-                                <!-- <a href="" class="btn btn-sm btn-default" role="button">Button</a> -->
+                                <a href="" class="btn btn-sm btn-default" role="button">Button</a>
 
                                 <!-- <div class="actions">
                                     <div class="dropdown">
