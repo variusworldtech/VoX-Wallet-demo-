@@ -18,5 +18,11 @@
         "laravel-mix": "^2.0",
         "lodash": "^4.17.5",
         "vue": "^2.5.7"
+    },
+    "dependencies": {
+        "ajv": "^6.5.3",
+        "gulp": "^3.9.1",
+        "imagemin": "^6.0.0",
+        "vue-resource": "^1.5.1"
     }
 }
