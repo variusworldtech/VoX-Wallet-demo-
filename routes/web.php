@@ -51,7 +51,7 @@ Route::get('/card', function () {
     return view('card');
 });
 
-Route::post('/cardapplied', 'cardController@store');
+Route::post('/cardapplied', 'CardApplicationController@store');
 
 Route::get('/settings', function () {
     return view('settings');

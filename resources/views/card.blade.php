@@ -12,14 +12,15 @@
                     <div class="col-sm-4">
                         <form action="/cardapplied" method="POST" id="cardapplied">
                             {{ csrf_field() }}
+                            
                             <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" class="form-control" id="email">
+                                <label for="email">Email Address*</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="name_on_card">Full name</label>
-                                <input type="text" class="form-control" id="name_" name="name_">
+                                <label for="name">Full name*</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
                             </div>
 
                             <div class="row">

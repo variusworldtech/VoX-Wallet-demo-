@@ -44,7 +44,7 @@ class depositByCardController extends Controller
           'description' => 'Transaction with VoX Wallet',
           'source' => $token,
           'capture' => false
-]);
+      ]);
 
       $transac = new Transaction;
 
@@ -56,6 +56,6 @@ class depositByCardController extends Controller
       $transac->CreditOrDebit = 'Credit';
       $transac->save();
 
-      return ('Payment successfull!!!');
+      return ('Payment successfull.');
 	}
 }
