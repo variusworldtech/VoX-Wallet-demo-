@@ -51,6 +51,10 @@ Route::get('/card', function () {
     return view('card');
 });
 
+Route::get('/cardapplied', function () {
+    return view('cardapplied');
+});
+
 Route::get('/settings', function () {
     return view('settings');
 });
