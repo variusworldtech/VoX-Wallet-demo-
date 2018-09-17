@@ -10,68 +10,68 @@
                         <img src="{{ asset('img/black_card.png') }}"/>
                     </div>
                     <div class="col-sm-4">
-                        <form action="/cardapplied" method="GET" id="nothing">
-                      
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" class="form-control" id="email">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="name_on_card">Full name
-                            <input type="text" class="form-control" id="name" name="name">
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="address">Address</label>
-                                    <input type="text" class="form-control" id="address" name="address">
-                                </div>
+                        <form action="/cardapplied" method="POST" id="cardapplied">
+                            {{ csrf_field() }}
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" class="form-control" id="email">
                             </div>
 
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label for="city">City</label>
-                                    <input type="text" class="form-control" id="city" name="city">
-                                </div>
+                            <div class="form-group">
+                                <label for="name_on_card">Full name</label>
+                                <input type="text" class="form-control" id="name_" name="name_">
                             </div>
 
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label for="province">Province</label>
-                                    <input type="text" class="form-control" id="province" name="province">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="address">Address</label>
+                                        <input type="text" class="form-control" id="address" name="address">
+                                    </div>
                                 </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="city">City</label>
+                                        <input type="text" class="form-control" id="city" name="city">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="province">Province</label>
+                                        <input type="text" class="form-control" id="province" name="province">
+                                    </div>
+                                </div>
+
                             </div>
 
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="postalcode">Postal Code</label>
-                                    <input type="text" class="form-control" id="postalcode" name="postalcode">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="postalcode">Postal Code</label>
+                                        <input type="text" class="form-control" id="postalcode" name="postalcode">
+                                    </div>
                                 </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="country">Country</label>
+                                        <input type="text" class="form-control" id="country" name="country">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="phone">Phone</label>
+                                        <input type="text" class="form-control" id="phone" name="phone">
+                                    </div>
+                                </div>
+
                             </div>
 
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="country">Country</label>
-                                    <input type="text" class="form-control" id="country" name="country">
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="phone">Phone</label>
-                                    <input type="text" class="form-control" id="phone" name="phone">
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <button type="submit" class="btn btn-success">Apply</button>
-                       </form>
+                            <button type="submit" class="btn btn-success">Apply</button>
+                        </form>
                     </div>   
                 </div>
             </div>
