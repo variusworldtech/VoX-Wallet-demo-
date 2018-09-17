@@ -212,6 +212,6 @@
 
         <!-- Site Functions & Actions -->
         <script src="js/app.min.js"></script>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
