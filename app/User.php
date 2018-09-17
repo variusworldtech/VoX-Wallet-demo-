@@ -27,7 +27,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function customers(){
-        return $this->hasOne(Customer::class);
+    public function transaction() {
+        return $this->belongsTo(User::class, 'id', 'user_id');
     }
 }

@@ -25,14 +25,11 @@ Route::get('/deposit', function () {
     return view('deposit');
 });
 
-Route::get('/depositByCard', 'depositByCardController@card');
-Route::post('/depositByCard', 'depositByCardController@card');
+Route::get('/depositByCard', function(){
+	return view('depositByCard');
+});
 
-// Route::get('/depositByCard', function() {
-// 	return view('depositByCard');
-// });
-
-// Route::post('/depositByCardPayment', 'depositByCardController@card');
+Route::post('/depositByCard', 'depositByCardController@depositBycard');
 
 Route::get('/withdraw', function () {
     return view('withdraw');
@@ -48,6 +45,10 @@ Route::get('/send', function () {
 
 Route::get('/transactions', function () {
     return view('transactions');
+});
+
+Route::get('/card', function () {
+    return view('card');
 });
 
 Route::get('/settings', function () {

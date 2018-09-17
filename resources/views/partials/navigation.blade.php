@@ -24,12 +24,12 @@
                         <li  <?php if ($uri == "/transactions") {echo(' class="navigation__active"');} ?>>
                             <a href="/transactions"><i class="zmdi zmdi-widgets"></i>Transactions</a>
                         </li>
-                        <li <?php if ($uri == "/settings") {echo(' class="navigation__active"');} ?>>
+                        <!-- <li <?php if ($uri == "/settings") {echo(' class="navigation__active"');} ?>>
                             <a href="/settings"><i class="zmdi zmdi-widgets"></i> Settings</a>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <a href="widgets.html"><i class="zmdi zmdi-widgets"></i> Help</a>
-                        </li>
+                        </li> -->
 
                         <!-- <li class="navigation__sub">
                             <a href="" data-mae-action="submenu-toggle"><i class="zmdi zmdi-view-list"></i> Tables</a>
