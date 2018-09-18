@@ -21,43 +21,46 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/deposit', function () {
-    return view('deposit');
-});
+Route::middleware(['auth'])->group(function () {
 
-Route::get('/depositByCard', function(){
-	return view('depositByCard');
-});
+    Route::get('/deposit', function () {
+        return view('deposit');
+    });
 
-Route::post('/depositByCard', 'depositByCardController@depositBycard');
+    Route::get('/depositByCard', function(){
+        return view('depositByCard');
+    });
 
-Route::get('/withdraw', function () {
-    return view('withdraw');
-});
+    Route::post('/depositByCard', 'depositByCardController@depositBycard');
 
-Route::get('/withdrawNoFunds', function () {
-    return view('withdrawNoFunds');
-});
+    Route::get('/withdraw', function () {
+        return view('withdraw');
+    });
 
-Route::get('/send', function () {
-    return view('send');
-});
+    Route::get('/withdrawNoFunds', function () {
+        return view('withdrawNoFunds');
+    });
 
-Route::get('/transactions', function () {
-    return view('transactions');
-});
+    Route::get('/send', function () {
+        return view('send');
+    });
 
-Route::get('/card', function () {
-    return view('card');
-});
+    Route::get('/transactions', function () {
+        return view('transactions');
+    });
 
-Route::post('/cardapplied', 'CardApplicationController@store');
+    Route::get('/card', function () {
+        return view('card');
+    });
 
-Route::get('/settings', function () {
-    return view('settings');
-});
-Route::get('/profile', function () {
-    return view('profile-timeline');
+    Route::post('/cardapplied', 'CardApplicationController@store');
+
+    Route::get('/settings', function () {
+        return view('settings');
+    });
+    Route::get('/profile', function () {
+        return view('profile-timeline');
+    });
 });
 
 Auth::routes();
