@@ -51,6 +51,6 @@ class depositByCardController extends Controller
 
       \Auth::user()->transactions()->save($transaction);
 
-      return ('Payment successful.');
+      return redirect('/dashboard');//->with(['msg', 'Payment successful, balance updated with ' . $amount . ' VoX.']);;
 	}
 }
