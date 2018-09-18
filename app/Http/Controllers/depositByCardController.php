@@ -29,8 +29,6 @@ class depositByCardController extends Controller
     
 	public function depositBycard(Request $request){
 
-        // Transaction::create(Request::all());
-
       \Stripe\Stripe::setApiKey("sk_test_90tK1HVTR0dOQwtvw5sij0MB");
 
       // Token is created using Elements!
@@ -46,16 +44,13 @@ class depositByCardController extends Controller
           'capture' => false
       ]);
 
-      $transac = new Transaction;
+      $transaction = new Transaction();
+      $transaction->amount = $amount;
+      $transaction->stripeToken = $token;
+      $transaction->CreditOrDebit = 'Credit';
 
+      \Auth::user()->transactions()->save($transaction);
 
-
-      $transac->user_id = \Auth::user()->id;
-      $transac->amount = $amount;
-      $transac->stripeToken = $token;
-      $transac->CreditOrDebit = 'Credit';
-      $transac->save();
-
-      return ('Payment successfull.');
+      return ('Payment successful.');
 	}
 }

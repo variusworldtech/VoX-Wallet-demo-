@@ -6,8 +6,8 @@
 <!doctype html>
 <html lang="en">
     <head>
-         {{ print_r($_POST) }}
-        {{ print_r($_GET) }}
+         <!-- {{ print_r($_POST) }}
+        {{ print_r($_GET) }} -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -76,12 +76,12 @@
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" class="form-control" id="email">
+                        <input type="email" class="form-control" id="email" value="{{ Auth::user()->email }}" required>
                     </div>
-
+                   
                     <div class="form-group">
                         <label for="name_on_card">Name on Card</label>
-                        <input type="text" class="form-control" id="name_on_card" name="name_on_card">
+                        <input type="text" class="form-control" id="name_on_card" name="name_on_card" value="{{ Auth::user()->name }}" required>
                     </div>
 
                     <div class="row">
@@ -133,7 +133,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="amount">Amount</label>
-                                <input type="number" class="form-control" id="amount" name="amount">
+                                <input type="number" class="form-control" id="amount" name="amount" required>
                             </div>
                         </div>
 
