@@ -23,6 +23,8 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function () {
 
+    Route::get('/dashboard', 'DashboardController@index');
+
     Route::get('/deposit', function () {
         return view('deposit');
     });
@@ -58,6 +60,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/settings', function () {
         return view('settings');
     });
+
     Route::get('/profile', function () {
         return view('profile-timeline');
     });
