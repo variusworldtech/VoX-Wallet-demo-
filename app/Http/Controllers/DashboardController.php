@@ -24,14 +24,14 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $transactions = \Auth::user()->transactions();
+        $allTransactions = \Auth::user()->transactions()->orderBy('created_at', 'desc')->get();
 
-        $credits = $transactions->where('CreditOrDebit', 'Credit')->sum('amount');
-        $debits = 0; //$transactions->where('CreditOrDebit', 'Debit')->sum('amount');
-        //todo: when setting the debits above propertly, it seems to blank out transactions list..
+        $credits = $allTransactions->where('CreditOrDebit', 'Credit')->sum('amount');
+        $debits = $allTransactions->where('CreditOrDebit', 'Debit')->sum('amount');
         $balance = $credits - $debits;
 
-        return \View::make('dashboard')->with(compact('transactions', 'balance'));
+        $transactions = $allTransactions->take(5);
 
+        return \View::make('dashboard')->with(compact('transactions', 'balance'));
     }
 }

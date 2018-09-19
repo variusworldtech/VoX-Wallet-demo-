@@ -4,7 +4,7 @@
     	<div class="card">
             <div class="card__body">
         
-                    <h2>All transactions</h2>
+            <h2>All transactions ({{ $balance }} VoX)</h2>
 
                     <p>Total number of transactions: {{ Auth::user()->transactions->count() }}</p>
                     @if (Auth::user()->transactions->count() == 0)
@@ -21,8 +21,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-
-                                    @foreach(Auth::user()->transactions as $transaction)
+                                    @foreach($transactions as $transaction)
                                     <tr>
                                         <td>{{ $transaction->created_at }} </td>
                                         <td>{{ $transaction->amount }} </td>
@@ -30,6 +29,7 @@
                                         <td>{{ $transaction->paymentMode }} </td>
                                     </tr>
                                     @endforeach
+                                </tbody>
                         </table>
                     @endif
             </div>
