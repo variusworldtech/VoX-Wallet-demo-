@@ -41,6 +41,9 @@ Route::middleware(['auth'])->group(function () {
         return view('withdraw');
     });
 
+    Route::get('/withdraw', 'WithdrawToBankController@index');
+    Route::post('/withdrawToBankAttempt', 'WithdrawToBankController@withdraw');
+
     Route::get('/send', function () {
         return view('send');
     });
