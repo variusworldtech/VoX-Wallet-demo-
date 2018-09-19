@@ -18,12 +18,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
 
 Route::middleware(['auth'])->group(function () {
 
     Route::get('/dashboard', 'DashboardController@index');
+    Route::get('/transactions', 'TransactionsController@index');
+    
 
     Route::get('/deposit', function () {
         return view('deposit');
@@ -39,15 +41,10 @@ Route::middleware(['auth'])->group(function () {
         return view('withdraw');
     });
 
-    Route::get('/withdrawNoFunds', function () {
-        return view('withdrawNoFunds');
-    });
+    Route::get('/withdrawtobank', 'WithdrawToBankController@index');
+    Route::post('/withdrawToBankAttempt', 'WithdrawToBankController@withdraw');
 
     Route::get('/send', 'SendController@index');
-
-    Route::get('/transactions', function () {
-        return view('transactions');
-    });
 
     Route::get('/card', function () {
         return view('card');

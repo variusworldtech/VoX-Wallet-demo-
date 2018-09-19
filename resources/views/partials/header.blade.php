@@ -1,6 +1,6 @@
         <header id="header">
             <div class="logo">
-                <a href="/index" class="hidden-xs">
+                <a href="/dashboard" class="hidden-xs">
                     <img src="https://www.variusworldtech.com/images/varius_world_tech-logo.png" style="max-width: 200px;">
                 </a>
                 <i class="logo__trigger zmdi zmdi-menu" data-mae-action="block-open" data-mae-target="#navigation"></i>
@@ -10,7 +10,7 @@
                     <a href=""><i class="zmdi zmdi-search"></i></a>
                 </li>
 
-                <li class="top-menu__apps dropdown hidden-xs hidden-sm">
+                <!-- <li class="top-menu__apps dropdown hidden-xs hidden-sm">
                     <a data-toggle="dropdown" href="">
                         <i class="zmdi zmdi-apps"></i>
                     </a>
@@ -53,8 +53,8 @@
                             </a>
                         </li>
                     </ul>
-                </li>
-                <li class="dropdown hidden-xs">
+                </li> -->
+               <!--  <li class="dropdown hidden-xs">
                     <a data-toggle="dropdown" href=""><i class="zmdi zmdi-more-vert"></i></a>
                     <ul class="dropdown-menu dropdown-menu--icon pull-right">
                         <li class="hidden-xs">
@@ -70,7 +70,8 @@
                             <a href=""><i class="zmdi zmdi-settings"></i> Other Settings</a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
+
                 <li class="top-menu__alerts" data-mae-action="block-open" data-mae-target="#notifications" data-toggle="tab" data-target="#notifications__messages">
                     <a href=""><i class="zmdi zmdi-notifications"></i></a>
                 </li>
@@ -78,14 +79,15 @@
                     <a href="{{URL::to('/login') }}"><li>Login</li></a>
                     <a href="{{URL::to('/register') }}"><li>Signup</li>
                 @else
+                    TBD VoX
                     <li class="top-menu__profile dropdown">
-                        <a data-toggle="dropdown" href="">
+                            <a data-toggle="dropdown" href="">
                             <img src="demo/img/profile-pics/1.jpg" alt="">
                         </a>
 
                         <ul class="dropdown-menu pull-right dropdown-menu--icon">
                             <li>
-                                <a href="profile-about.html"><i class="zmdi zmdi-account"></i> View Profile</a>
+                            <a href="profile-about.html"><i class="zmdi zmdi-account"></i> {{ Auth::user()->name }}</a>
                             </li>
                             <li>
                                 <a href=""><i class="zmdi zmdi-input-antenna"></i> Privacy Settings</a>

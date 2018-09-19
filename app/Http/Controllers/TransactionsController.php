@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Auth;
 
-class DashboardController extends Controller
+class TransactionsController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -30,6 +30,7 @@ class DashboardController extends Controller
         $debits = $transactions->where('CreditOrDebit', 'Debit')->sum('amount');
         $balance = $credits - $debits;
 
-        return \View::make('dashboard')->with(compact('transactions', 'balance'));
+        return \View::make('transactions')->with(compact('transactions', 'balance'));
+
     }
 }

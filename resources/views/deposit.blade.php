@@ -43,7 +43,7 @@
                                 </h2>
                             </div>
                                 <br/>
-                                <a href="/depositByCard" class="btn btn-sm btn-default" role="button">Button</a>
+                                <a href="/depositByCard" class="btn btn-sm btn-default" role="button">Load VoX now</a>
                                 <!-- <div id="app">
                                     <checkout-form></checkout-form>
                                 </div> -->

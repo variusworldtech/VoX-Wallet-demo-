@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.welcome_layout')
 
 @section('content')
 <div class="container">
@@ -60,6 +60,10 @@
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
+                                
+                                <a href="{{URL::to('/register') }}">Signup</a>
+                               
+                                
                             </div>
                         </div>
                     </form>

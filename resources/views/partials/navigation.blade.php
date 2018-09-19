@@ -12,8 +12,8 @@
                         <li <?php if ($uri == "/deposit") {echo(' class="navigation__active"');} ?>>
                             <a href="/deposit"><i class="zmdi zmdi-format-underlined"></i> Deposit</a>
                         </li>
-                        <li <?php if ($uri == "/withdrawNoFunds") {echo(' class="navigation__active"');} ?>>
-                            <a href="/withdrawNoFunds"><i class="zmdi zmdi-widgets"></i> Withdraw</a>
+                        <li <?php if ($uri == "/withdraw") {echo(' class="navigation__active"');} ?>>
+                            <a href="/withdraw"><i class="zmdi zmdi-widgets"></i> Withdraw</a>
                         </li>
                         <li <?php if ($uri == "/send") {echo(' class="navigation__active"');} ?>>
                             <a href="/send"><i class="zmdi zmdi-widgets"></i> Send</a>
