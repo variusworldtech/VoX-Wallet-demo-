@@ -15,5 +15,6 @@
                             <p>To withdraw you must have funds in your account.</p>
                             <a href="/deposit" class="btn btn-default" role="button">Deposit</a>
                         </div>
+        </div>
     </section>
 @endsection

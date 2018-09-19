@@ -64,6 +64,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/profile', function () {
         return view('profile-timeline');
     });
+
+    Route::get('/send', 'TransactionController@send')->name('send');
+    Route::post('/send', 'TransactionController@send')->name('send');
 });
 
 Auth::routes();
