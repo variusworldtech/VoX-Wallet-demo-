@@ -43,9 +43,7 @@ Route::middleware(['auth'])->group(function () {
         return view('withdrawNoFunds');
     });
 
-    Route::get('/send', function () {
-        return view('send');
-    });
+    Route::get('/send', 'SendController@index');
 
     Route::get('/transactions', function () {
         return view('transactions');
