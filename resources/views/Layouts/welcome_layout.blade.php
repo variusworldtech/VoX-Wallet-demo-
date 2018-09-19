@@ -79,6 +79,9 @@
           margin-bottom: 0px;
 
       }
+      a {
+        color:#fff;
+      }
         </style>
     </head>
     <body>
