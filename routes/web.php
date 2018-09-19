@@ -35,6 +35,7 @@ Route::middleware(['auth'])->group(function () {
         return view('depositByCard');
     });
 
+    Route::post('/depositsaveaddress', 'DepositController@saveaddress');
     Route::post('/depositByCard', 'depositByCardController@depositBycard');
 
     Route::get('/withdraw', function () {
