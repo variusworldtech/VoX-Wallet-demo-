@@ -22,6 +22,7 @@
                           @foreach($users as $user)
                           <tr>
                               <td>{{ $user->name }}</td>
+                              <td>{{ $user->email }}</td>
                               <td><button class="btn btn-primary" data-toggle="modal" data-target="#{{ $loop->iteration }}">View profile</button></td>
                           </tr>
 
