@@ -86,7 +86,7 @@
 
             <div class="content">
                 <div class=" m-b-md">
-                    <img class="logo logo-light" alt="logo" src="https://variusworldtech.com/images/varius_world_tech-logo.png" srcset="images/varius_world_tech-logo.png 2x">
+                    <img class="logo logo-light" alt="logo" src="https://variusworldtech.com/images/varius_world_tech-logo.png">
                     
                     <p>Varius World Technology are excited to launch our new ICO raising funds to developer our inductsty specific Distributed Ledger Technology protocol. </p>
 
