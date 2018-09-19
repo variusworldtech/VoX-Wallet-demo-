@@ -79,7 +79,7 @@
                     <a href="{{URL::to('/login') }}"><li>Login</li></a>
                     <a href="{{URL::to('/register') }}"><li>Signup</li>
                 @else
-                    {{ $balance }} VoX
+                    TBD VoX
                     <li class="top-menu__profile dropdown">
                             <a data-toggle="dropdown" href="">
                             <img src="demo/img/profile-pics/1.jpg" alt="">
@@ -87,7 +87,7 @@
 
                         <ul class="dropdown-menu pull-right dropdown-menu--icon">
                             <li>
-                                <a href="profile-about.html"><i class="zmdi zmdi-account"></i> View Profile</a>
+                            <a href="profile-about.html"><i class="zmdi zmdi-account"></i> {{ Auth::user()->name }}</a>
                             </li>
                             <li>
                                 <a href=""><i class="zmdi zmdi-input-antenna"></i> Privacy Settings</a>

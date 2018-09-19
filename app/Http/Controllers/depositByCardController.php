@@ -37,7 +37,7 @@ class depositByCardController extends Controller
       $amount = $_POST['amount'];
 
       $charge = \Stripe\Charge::create([
-          'amount' => $amount,
+          'amount' => $amount*100,
           'currency' => 'usd',
           'description' => 'Transaction with VoX Wallet',
           'source' => $token,

@@ -28,7 +28,6 @@ class TransactionsController extends Controller
 
         $credits = $transactions->where('CreditOrDebit', 'Credit')->sum('amount');
         $debits = $transactions->where('CreditOrDebit', 'Debit')->sum('amount');
-        //todo: when setting the debits above propertly, it seems to blank out transactions list..
         $balance = $credits - $debits;
 
         return \View::make('transactions')->with(compact('transactions', 'balance'));

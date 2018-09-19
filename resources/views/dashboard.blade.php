@@ -21,7 +21,7 @@
                 </thead>
                 <tbody>
 
-                    @foreach($transactions as $transaction)
+                    @foreach($transactions->take(5) as $transaction)
                     <tr>
                         <td>{{ $transaction->created_at }} </td>
                         <td>{{ $transaction->amount }} </td>

@@ -133,7 +133,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="amount">Amount</label>
-                                <input type="number" class="form-control" id="amount" name="amount" required>
+                                <input type="number" step="0.01" class="form-control" id="amount" name="amount" required>
                             </div>
                         </div>
 
