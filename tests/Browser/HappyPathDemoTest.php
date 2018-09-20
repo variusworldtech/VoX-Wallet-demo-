@@ -23,34 +23,36 @@ class HappyPathDemoTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $this->browser = $browser;
 
-            $this->signup('me@me.com');
-            $this->logout('me@me.com');
+            $this->signup('Me Me', 'me@me.com');
+            $this->logout();
             $this->login('me@me.com');
             $this->verifyDashboardFirstVisitAndNavigateToDeposit($browser);
             $this->associateWallet();
             $this->loadVoxByCard(200.50);
-            // $this->logout();
-            // $this->signup($browser, 'A friend', 'a@friend.com');
-            // $this->logout();
-            // $this->login($browser, 'me@me.com');
-            // $this->findfriend('A friend');
-            // $this->sendVoXToFriend(100);
-            // $this->winVoX(500);
-            // $this->withdrawVox(600.50);
+            $this->logout();
+            $this->signup('A friend', 'a@friend.com');
+            $this->logout();
+            $this->login('me@me.com');
+            //$this->sendVoXToFriend('A friend', 100);
+            $this->verifyBalance(200.5);
+            $this->winVoX();
+            $this->verifyBalance(250.5);
+            // $this->verifyBalance(0);
+            $this->withdrawVoX(650.50);
             // $this->verifyBalance(0);
             // $this->logout();
         });
     }
 
-    function signup() {
+    function signup(string $name, string $email) {
         $this->browser
             ->visit('/')
             ->waitUntilMissing('#page-loader')
             ->assertSee('Varius')
             ->clickLink('Signup')
             ->assertSee('Register')
-            ->type('name', 'Robert Smith')
-            ->type('email', 'bob@hotmail.com')
+            ->type('name', $name)
+            ->type('email', $email)
             ->type('password', 'Password1!')
             ->type('password_confirmation', 'Password1!')
             ->press('Register')
@@ -66,13 +68,13 @@ class HappyPathDemoTest extends DuskTestCase
                     
     }
 
-    function login() {
+    function login(string $email) {
         $this->browser
             ->assertPathIs('/')
             ->clickLink('Login')
             ->waitUntilMissing('#page-loader')
             ->assertSee('Login')
-            ->type('email', 'bob@hotmail.com')
+            ->type('email', $email)
             ->type('password', 'Password1!')
             ->press('Login')
             ->assertPathIs('/dashboard');
@@ -116,5 +118,26 @@ class HappyPathDemoTest extends DuskTestCase
             ->press('Submit Payment')
             ->waitForLocation('/dashboard')
             ->assertSee('Balance: ' . $amount . ' VoX');
+    }
+
+    function verifyBalance(float $balance) {
+        $this->browser
+            ->visit('/dashboard')
+            ->assertSee('Balance: ' . $balance . ' VoX');
+    }
+
+    function winVoX() {
+        $this->browser
+            ->visit('/stake')
+            ->pause(500)
+            ->visit('/win');
+    }
+
+    function withdrawVoX(float $amount) {
+        $this->browser
+            ->clickLink('Withdraw')
+            ->assertPathIs('/withdraw')
+            ->clickLink('Withdraw to bank account')
+            ->assertPathIs('/withdrawtobank');
     }
 }
