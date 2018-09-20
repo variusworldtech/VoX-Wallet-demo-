@@ -37,7 +37,7 @@
                                   <form>
                                     <div class="form-group">
                                       <label for="amount">Amount</label>
-                                      <input type="number" class="form-control" id="amount" placeholder="Amount to send">
+                                    <input type="number" class="form-control" name="amount{{ $loop->iteration }}" id="amount" placeholder="Amount to send">
                                     </div>
                                     <button type="submit" class="btn btn-primary">Send</button>
                                   </form>

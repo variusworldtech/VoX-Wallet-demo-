@@ -29,18 +29,24 @@ class HappyPathDemoTest extends DuskTestCase
             $this->verifyDashboardFirstVisitAndNavigateToDeposit($browser);
             $this->associateWallet();
             $this->loadVoxByCard(200.50);
+            $this->verifyBalance(200.5);
+            $this->winVoX();
+            $this->verifyBalance(250.5);
+            $this->withdrawVoX(150.5);
+            $this->verifyBalance(100);
+
+            // Signup friend and send 40 to them
             $this->logout();
             $this->signup('A friend', 'a@friend.com');
             $this->logout();
             $this->login('me@me.com');
-            //$this->sendVoXToFriend('A friend', 100);
-            $this->verifyBalance(200.5);
-            $this->winVoX();
-            $this->verifyBalance(250.5);
-            // $this->verifyBalance(0);
-            $this->withdrawVoX(650.50);
-            // $this->verifyBalance(0);
-            // $this->logout();
+            $this->verifyBalance(100);
+            $this->sendVoXToFriend('A friend', 2, 40.0);
+            $this->verifyBalance(100); //todo: Shane make this 60 when send implemented
+            $this->logout();
+            $this->login('a@friend.com');
+            $this->verifyBalance(0); //todo: Shane make this 40 when send implemented
+            $this->logout();
         });
     }
 
@@ -115,6 +121,7 @@ class HappyPathDemoTest extends DuskTestCase
         $this->browser->driver->switchTo()->defaultContent();
             
         $this->browser
+            ->waitUntilMissing('.fadeInUp')
             ->press('Submit Payment')
             ->waitForLocation('/dashboard')
             ->assertSee('Balance: ' . $amount . ' VoX');
@@ -138,6 +145,23 @@ class HappyPathDemoTest extends DuskTestCase
             ->clickLink('Withdraw')
             ->assertPathIs('/withdraw')
             ->clickLink('Withdraw to bank account')
-            ->assertPathIs('/withdrawtobank');
+            ->assertPathIs('/withdrawtobank')
+            ->type('voxAmount', $amount)
+            ->waitUntilMissing('#page-loader')
+            ->press('Withdraw now')
+            ->assertPathIs('/dashboard');
+    }
+
+    function sendVoXToFriend(string $friendName, int $userId, float $amount) {
+        $this->browser
+            ->clickLink('Send')
+            ->assertPathIs('/send')
+            ->type('input#search', substr($friendName, 0, strlen($friendName)-3))
+            ->waitUntilMissing('#page-loader')
+            ->press('View profile')
+            ->pause(1000)
+            ->type('amount'.$userId, $amount)
+            ->press('Send');
+            //->assertPathIs('/dashboard'); todo: Shane should be able to uncomment this when implemented
     }
 }
