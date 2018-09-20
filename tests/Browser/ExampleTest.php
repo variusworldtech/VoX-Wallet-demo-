@@ -21,6 +21,8 @@ class ExampleTest extends DuskTestCase
             
             $browser->clickLink('Signup')
                     ->assertSee('Register');
+            
+         
         });
     }
 }
