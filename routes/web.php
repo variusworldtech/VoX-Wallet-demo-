@@ -58,7 +58,7 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::get('/profile', function () {
-        return view('profile-timeline');
+        return view('profile');
     });
 
     //simulate win
