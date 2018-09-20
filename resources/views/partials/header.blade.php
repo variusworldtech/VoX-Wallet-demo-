@@ -79,15 +79,18 @@
                     <a href="{{URL::to('/login') }}"><li>Login</li></a>
                     <a href="{{URL::to('/register') }}"><li>Signup</li>
                 @else
-                    TBD VoX
+                <div>
+                    <h1>{{ (Auth::user()->transactions->where('CreditOrDebit', 'Credit')->sum('amount')) - (Auth::user()->transactions->where('CreditOrDebit', 'Debit')->sum('amount')) }} VoX</h1>
+                </div>
                     <li class="top-menu__profile dropdown">
                             <a data-toggle="dropdown" href="">
-                            <img src="demo/img/profile-pics/1.jpg" alt="">
-                        </a>
+                                <img src="{{ Gravatar::fallback('https://missingtricks.net/wp-content/uploads/2018/01/Attitude-DP-1-1-300x300.jpg')->get(Auth::user()->email) }}" alt="It's {{ Auth::user()->name }}">
+                            </a>
 
                         <ul class="dropdown-menu pull-right dropdown-menu--icon">
                             <li>
-                            <a href="profile-about.html"><i class="zmdi zmdi-account"></i> {{ Auth::user()->name }}</a>
+
+                            <a href="{{URL::to('/profile') }}"><i class="zmdi zmdi-account"></i> {{ Auth::user()->name }}</a>
                             </li>
                             <li>
                                 <a href=""><i class="zmdi zmdi-input-antenna"></i> Privacy Settings</a>
@@ -108,3 +111,7 @@
                 <i class="zmdi zmdi-search top-search__reset"></i>
             </form> -->
         </header>
+
+
+
+
