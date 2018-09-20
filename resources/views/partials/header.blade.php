@@ -81,8 +81,8 @@
                 @else
                     TBD VoX
                     <li class="top-menu__profile dropdown">
-                            <a data-toggle="dropdown" href="">
-                            <img src="demo/img/profile-pics/1.jpg" alt="">
+                            <a data-toggle="dropdown" href="" id="profile_pic">
+                            <img src="demo/img/profile-pics/1.jpg" alt="profile_pic">
                         </a>
 
                         <ul class="dropdown-menu pull-right dropdown-menu--icon">
@@ -96,7 +96,7 @@
                                 <a href=""><i class="zmdi zmdi-settings"></i> Settings</a>
                             </li>
                             <li>
-                                <a href="{{ URL::to('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="zmdi zmdi-time-restore"></i> Logout</a>
+                                <a href="{{ URL::to('/logout') }}" id="logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="zmdi zmdi-time-restore"></i> Logout</a>
                             </li>
                         </ul>
                     </li>
