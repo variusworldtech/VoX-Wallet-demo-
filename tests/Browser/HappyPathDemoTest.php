@@ -7,15 +7,15 @@ use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class ExampleTest extends DuskTestCase
+class HappyPathDemoTest extends DuskTestCase
 {
     use RefreshDatabase;
     /**
-     * A basic browser test example.
+     * A basic happy path test for the demo.
      *
      * @return void
      */
-    public function testBasicExample()
+    public function testHappyPathDemo()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
@@ -40,7 +40,11 @@ class ExampleTest extends DuskTestCase
                     ->assertPathIs('/dashboard')
                     ->assertSee('Balance: 0 VoX')
                     ->clickLink('Ready to play? Load some VoX now')
-                    ->assertPathIs('/deposit');  
+                    ->assertPathIs('/deposit')
+                    ->type('walletAddress', '0xc0ffee254729296a45a3885639AC7E10F9d54979')
+                    ->pause(1000)
+                    ->press('Associate Wallet')
+                    ;  
         });
     }
 }
