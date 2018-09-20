@@ -83,10 +83,15 @@
                     <h1>{{ (Auth::user()->transactions->where('CreditOrDebit', 'Credit')->sum('amount')) - (Auth::user()->transactions->where('CreditOrDebit', 'Debit')->sum('amount')) }} VoX</h1>
                 </div>
                     <li class="top-menu__profile dropdown">
+                        <a data-toggle="dropdown" href="">
+                            <img src="{{ Gravatar::fallback('https://missingtricks.net/wp-content/uploads/2018/01/Attitude-DP-1-1-300x300.jpg')->get(Auth::user()->email) }}" alt="It's {{ Auth::user()->name }}">
+                        </a>
                             <a data-toggle="dropdown" href="">
-                                <img src="{{ Gravatar::fallback('https://missingtricks.net/wp-content/uploads/2018/01/Attitude-DP-1-1-300x300.jpg')->get(Auth::user()->email) }}" alt="It's {{ Auth::user()->name }}">
-                            </a>
-
+                            <img src="demo/img/profile-pics/1.jpg" alt="">
+                        </a>
+                            <a data-toggle="dropdown" href="" id="profile_pic">
+                            <img src="demo/img/profile-pics/1.jpg" alt="profile_pic">
+                        </a>
                         <ul class="dropdown-menu pull-right dropdown-menu--icon">
                             <li>
 
@@ -99,7 +104,7 @@
                                 <a href=""><i class="zmdi zmdi-settings"></i> Settings</a>
                             </li>
                             <li>
-                                <a href="{{ URL::to('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="zmdi zmdi-time-restore"></i> Logout</a>
+                                <a href="{{ URL::to('/logout') }}" id="logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="zmdi zmdi-time-restore"></i> Logout</a>
                             </li>
                         </ul>
                     </li>
