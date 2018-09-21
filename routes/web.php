@@ -60,8 +60,12 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::get('/profile', function () {
-        return view('profile-timeline');
+        return view('profile');
     });
+
+    //simulate win
+    Route::get('/stake', 'WinController@stake');
+    Route::get('/win', 'WinController@win');
 });
 
 Auth::routes();
