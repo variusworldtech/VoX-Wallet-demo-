@@ -31,13 +31,17 @@
                             <div class="modal-dialog" role="document">
                               <div class="modal-content">
                                 <div class="modal-body" align="center">
-                                  <p style="text-transform: capitalize">{{ $user->name }}</p>
+                                  <p>{{ $user->name }}</p>
                                   <p>{{ $user->email }}</p>
 
-                                  <form>
+                                  <form action="/send" method="POST" id="{{ $user->name }}">
+                                    {{ csrf_field() }}
                                     <div class="form-group">
+                                      <input type="hidden" class="form-control" id="name" name="name" value="{{ $user->name }}">
+                                      <input type="hidden" class="form-control" id="email" name="email" value="{{ $user->email }}">
+                                      <input type="hidden" class="form-control" id="user_id" name="user_id" value="{{ $user->id }}">
                                       <label for="amount">Amount</label>
-                                      <input type="number" class="form-control" id="amount" placeholder="Amount to send">
+                                      <input type="number" step="0.01" class="form-control" id="amount" name="amount" placeholder="10" value="5" required>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Send</button>
                                   </form>

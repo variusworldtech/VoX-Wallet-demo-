@@ -25,7 +25,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/dashboard', 'DashboardController@index');
     Route::get('/transactions', 'TransactionsController@index');
-    
+
 
     Route::get('/deposit', function () {
         return view('deposit');
@@ -45,6 +45,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/withdrawtobank', 'WithdrawToBankController@index');
     Route::post('/withdrawToBankAttempt', 'WithdrawToBankController@withdraw');
 
+
+    Route::post('/send', 'SendController@send');
     Route::get('/send', 'SendController@index');
 
     Route::get('/card', function () {

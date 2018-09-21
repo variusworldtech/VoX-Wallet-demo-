@@ -16,7 +16,7 @@
 
         <script src="https://js.stripe.com/v3/"></script>
 
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <!-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> -->
 
         <style>
             .spacer {
@@ -51,7 +51,7 @@
 
     </head>
     <body>
-       
+
         <div class="container">
             <div class="col-md-6 col-md-offset-3">
                 <h1>Payment Form</h1>
@@ -78,7 +78,7 @@
                         <label for="email">Email Address</label>
                         <input type="email" class="form-control" id="email" value="{{ Auth::user()->email }}" required>
                     </div>
-                   
+
                     <div class="form-group">
                         <label for="name_on_card">Name on Card</label>
                         <input type="text" class="form-control" id="name_on_card" name="name_on_card" value="{{ Auth::user()->name }}" required>
@@ -251,7 +251,7 @@
     </body>
 </html>
 
-    <!-- <form 
+    <!-- <form
         accept-charset="UTF-8" action="/" class="require-validation"
             data-cc-on-file="false"
             data-stripe-publishable-key="test_public_key"

@@ -10,7 +10,7 @@ use App\User;
 // use Stripe\{Stripe, Charge, Customer};
 
 class depositByCardController extends Controller
-{	
+{
 	 /**
      * Create a new controller instance.
      *
@@ -26,7 +26,7 @@ class depositByCardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
+
 	public function depositBycard(Request $request){
 
       \Stripe\Stripe::setApiKey("sk_test_90tK1HVTR0dOQwtvw5sij0MB");
