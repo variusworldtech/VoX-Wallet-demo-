@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
@@ -27,7 +28,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function transaction() {
-        return $this->belongsTo(User::class, 'id', 'user_id');
+    public function transactions() {
+        return $this->hasMany('App\Transaction');
     }
 }

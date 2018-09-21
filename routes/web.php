@@ -11,53 +11,56 @@
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
-
 Auth::routes();
 
-Route::get('/', function () {
-    return view('index');
+Route::middleware(['guest'])->group(function () {
+    Route::get('/', function () {
+        return view('welcome');
+    });
 });
 
-Route::get('/deposit', function () {
-    return view('deposit');
+Route::middleware(['auth'])->group(function () {
+
+    Route::get('/dashboard', 'DashboardController@index');
+    Route::get('/transactions', 'TransactionsController@index');
+
+    Route::get('/deposit', function () {
+        return view('deposit');
+    });
+
+    Route::get('/depositByCard', function(){
+        return view('depositByCard');
+    });
+
+    Route::post('/depositsaveaddress', 'DepositController@saveaddress');
+    Route::post('/depositByCard', 'depositByCardController@depositBycard');
+
+    Route::get('/withdraw', function () {
+        return view('withdraw');
+    });
+
+    Route::get('/withdrawtobank', 'WithdrawToBankController@index');
+    Route::post('/withdrawToBankAttempt', 'WithdrawToBankController@withdraw');
+
+
+    Route::post('/send', 'SendController@send');
+    Route::get('/send', 'SendController@index');
+
+    Route::get('/card', function () {
+        return view('card');
+    });
+
+    Route::post('/cardapplied', 'CardApplicationController@store');
+
+    Route::get('/settings', function () {
+        return view('settings');
+    });
+
+    Route::get('/profile', function () {
+        return view('profile');
+    });
+
+    //simulate win
+    Route::get('/stake', 'WinController@stake');
+    Route::get('/win', 'WinController@win');
 });
-
-Route::get('/depositByCard', function(){
-	return view('depositByCard');
-});
-
-Route::post('/depositByCard', 'depositByCardController@depositBycard');
-
-Route::get('/withdraw', function () {
-    return view('withdraw');
-});
-
-Route::get('/withdrawNoFunds', function () {
-    return view('withdrawNoFunds');
-});
-
-Route::get('/send', function () {
-    return view('send');
-});
-
-Route::get('/transactions', function () {
-    return view('transactions');
-});
-
-Route::get('/card', function () {
-    return view('card');
-});
-
-Route::get('/settings', function () {
-    return view('settings');
-});
-Route::get('/profile', function () {
-    return view('profile-timeline');
-});
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

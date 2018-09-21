@@ -3,22 +3,22 @@
             <section id="content">
                 <div class="content--boxed-sm">
                     <header class="content__header">
-                        <h2>Malinda Hollaway <small>Web/UI Developer, Edinburgh, Scotland</small></h2>
+                        <h2>{{ Auth::user()->name }} <small>Web/UI Developer, Edinburgh, Scotland</small></h2>
                     </header>
 
                     <div class="card profile">
                         <div class="profile__img">
-                            <img src="demo/img/contacts/2.jpg" alt="">
+                            <img src="{{ Gravatar::fallback('http://urlto.example.com/avatar.jpg')->get(Auth::user()->email) }}" alt="It's {{ Auth::user()->name }}">
 
                             <a href="" class="zmdi zmdi-camera profile__img__edit"></a>
                         </div>
 
                         <div class="profile__info">
-                            <p>Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magnae tiam porta sem malesuada magna mollis euismod.</p>
+                            <p>Tech savvy, love dancing and reading</p>
 
                             <ul class="icon-list">
                                 <li><i class="zmdi zmdi-phone"></i> 308-360-8938</li>
-                                <li><i class="zmdi zmdi-email"></i> malinda@inbound.plus</li>
+                                <li><i class="zmdi zmdi-email"></i> {{ Auth::user()->email }}</li>
                                 <li><i class="zmdi zmdi-twitter"></i> @mallinda-hollaway</li>
                             </ul>
                         </div>

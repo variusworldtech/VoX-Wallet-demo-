@@ -79,6 +79,9 @@
           margin-bottom: 0px;
 
       }
+      a {
+        color:#fff;
+      }
         </style>
     </head>
     <body>
@@ -92,10 +95,10 @@
         </div>
         <!-- Header -->
 
-        @include('partials.header')
+        
 
         <section id="main">
-            @include('partials.navigation')
+            
             <header class="content__header" style="padding-top: 60px;">
             @yield('content')
 
@@ -212,6 +215,6 @@
 
         <!-- Site Functions & Actions -->
         <script src="js/app.min.js"></script>
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            @csrf
-        </form>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddBalanceToUsers extends Migration
+class MakeStripeTokenNullableTransactionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class AddBalanceToUsers extends Migration
      */
     public function up()
     {
-        schema::table('users', function($table) {
-            $table->float('balance')->after('remember_token')->default(0);
-        });  
+        Schema::table('transactions', function (Blueprint $table) {
+            $table->string('stripeToken')-> nullable()->default(null)->change();
+        });
     }
 
     /**
@@ -25,8 +25,8 @@ class AddBalanceToUsers extends Migration
      */
     public function down()
     {
-        Schema::table('users', function($table) {
-            $table->dropColumn('balance');
+        Schema::table('transactions', function (Blueprint $table) {
+            //
         });
     }
 }

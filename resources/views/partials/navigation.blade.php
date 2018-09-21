@@ -6,14 +6,14 @@
 
                 <div class="navigation__menu c-overflow">
                     <ul>
-                        <li <?php if ($uri == "/") {echo(' class="navigation__active"');} ?>>
-                            <a href="/"><i class="zmdi zmdi-home"></i>Dashboard</a>
+                        <li <?php if ($uri == "/dashboard") {echo(' class="navigation__active"');} ?>>
+                            <a href="/dashboard"><i class="zmdi zmdi-home"></i>Dashboard</a>
                         </li>
-                        <li <?php if ($uri == "/deposit") {echo(' class="navigation__active"');} ?>>
+                        <li <?php if (strpos($uri, "/deposit") === 0) {echo(' class="navigation__active"');} ?>>
                             <a href="/deposit"><i class="zmdi zmdi-format-underlined"></i> Deposit</a>
                         </li>
-                        <li <?php if ($uri == "/withdrawNoFunds") {echo(' class="navigation__active"');} ?>>
-                            <a href="/withdrawNoFunds"><i class="zmdi zmdi-widgets"></i> Withdraw</a>
+                        <li <?php if (strpos($uri, "/withdraw") === 0) {echo(' class="navigation__active"');} ?>>
+                            <a href="/withdraw"><i class="zmdi zmdi-widgets"></i> Withdraw</a>
                         </li>
                         <li <?php if ($uri == "/send") {echo(' class="navigation__active"');} ?>>
                             <a href="/send"><i class="zmdi zmdi-widgets"></i> Send</a>

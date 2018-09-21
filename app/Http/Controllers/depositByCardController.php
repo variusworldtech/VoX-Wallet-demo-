@@ -10,7 +10,7 @@ use App\User;
 // use Stripe\{Stripe, Charge, Customer};
 
 class depositByCardController extends Controller
-{	
+{
 	 /**
      * Create a new controller instance.
      *
@@ -26,10 +26,8 @@ class depositByCardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
-	public function depositBycard(Request $request){
 
-        // Transaction::create(Request::all());
+	public function depositBycard(Request $request){
 
       \Stripe\Stripe::setApiKey("sk_test_90tK1HVTR0dOQwtvw5sij0MB");
 
@@ -39,23 +37,20 @@ class depositByCardController extends Controller
       $amount = $_POST['amount'];
 
       $charge = \Stripe\Charge::create([
-          'amount' => $amount,
+          'amount' => $amount*100,
           'currency' => 'usd',
           'description' => 'Transaction with VoX Wallet',
           'source' => $token,
           'capture' => false
-]);
+      ]);
 
-      $transac = new Transaction;
+      $transaction = new Transaction();
+      $transaction->amount = $amount;
+      $transaction->stripeToken = $token;
+      $transaction->CreditOrDebit = 'Credit';
 
+      \Auth::user()->transactions()->save($transaction);
 
-
-      $transac->user_id = \Auth::user()->id;
-      $transac->amount = $amount;
-      $transac->stripeToken = $token;
-      $transac->CreditOrDebit = 'Credit';
-      $transac->save();
-
-      return ('Payment successfull!!!');
+      return redirect('/dashboard');//->with(['msg', 'Payment successful, balance updated with ' . $amount . ' VoX.']);;
 	}
 }
