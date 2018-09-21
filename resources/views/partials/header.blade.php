@@ -88,10 +88,10 @@
                         <a href="{{URL::to('/profile') }}"><i class="zmdi zmdi-account"></i> {{ Auth::user()->name }}</a>
                         </li>
                         <li>
-                            <a href=""><i class="zmdi zmdi-input-antenna"></i> Privacy Settings</a>
+                            <!-- <a href=""><i class="zmdi zmdi-input-antenna"></i> Privacy Settings</a> -->
                         </li>
                         <li>
-                            <a href=""><i class="zmdi zmdi-settings"></i> Settings</a>
+                            <!-- <a href=""><i class="zmdi zmdi-settings"></i> Settings</a> -->
                         </li>
                         <li>
                             <a href="{{ URL::to('/logout') }}" id="logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="zmdi zmdi-time-restore"></i> Logout</a>
