@@ -148,6 +148,7 @@ class HappyPathDemoTest extends DuskTestCase
             ->assertPathIs('/withdrawtobank')
             ->type('voxAmount', $amount)
             ->waitUntilMissing('#page-loader')
+            ->waitUntilMissing('.fadeInUp')
             ->press('Withdraw now')
             ->assertPathIs('/dashboard');
     }
