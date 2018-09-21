@@ -9,7 +9,7 @@
                         <li <?php if ($uri == "/dashboard") {echo(' class="navigation__active"');} ?>>
                             <a href="/dashboard"><i class="zmdi zmdi-home"></i>Dashboard</a>
                         </li>
-                        <li <?php if ($uri == "/deposit") {echo(' class="navigation__active"');} ?>>
+                        <li <?php if (strpos($uri, "/deposit") === 0) {echo(' class="navigation__active"');} ?>>
                             <a href="/deposit"><i class="zmdi zmdi-format-underlined"></i> Deposit</a>
                         </li>
                         <li <?php if ($uri == "/withdraw") {echo(' class="navigation__active"');} ?>>

@@ -3,20 +3,13 @@
 
 <section id="content">
 
-<!doctype html>
-<html lang="en">
-    <head>
          <!-- {{ print_r($_POST) }}
         {{ print_r($_GET) }} -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- <title>Laravel</title> -->
-
         <script src="https://js.stripe.com/v3/"></script>
-
-        <!-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> -->
 
         <style>
             .spacer {
@@ -48,9 +41,6 @@
                 color: #fa755a;
             }
         </style>
-
-    </head>
-    <body>
 
         <div class="container">
             <div class="col-md-6 col-md-offset-3">
@@ -138,27 +128,6 @@
                         </div>
 
                     </div>
-
-                    {{-- <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="cc_number">Credit Card Number</label>
-                                <input type="text" class="form-control" id="cc_number" name="cc_number">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="expiry">Expiry</label>
-                                <input type="text" class="form-control" id="expiry" name="expiry">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="cvc">CVC</label>
-                                <input type="text" class="form-control" id="cvc" name="cvc">
-                            </div>
-                        </div>
-                    </div> --}}
 
                     <div class="form-group">
                         <label for="card-element">Credit Card</label>
@@ -248,64 +217,5 @@
                 }
             })();
         </script>
-    </body>
-</html>
 
-    <!-- <form
-        accept-charset="UTF-8" action="/" class="require-validation"
-            data-cc-on-file="false"
-            data-stripe-publishable-key="test_public_key"
-            id="payment-form" method="post">
-            {{ csrf_field() }}
-            <div class='form-row'>
-                <div class='col-xs-12 form-group required'>
-                    <label class='control-label'>Name on Card</label> <input
-                        class='form-control' size='4' type='text'>
-                </div>
-            </div>
-            <div class='form-row'>
-                <div class='col-xs-12 form-group card required'>
-                    <label class='control-label'>Card Number</label> <input
-                        autocomplete='off' class='form-control card-number' size='20'
-                        type='text'>
-                </div>
-            </div>
-            <div class='form-row'>
-                <div class='col-xs-4 form-group cvc required'>
-                    <label class='control-label'>CVC</label> <input autocomplete='off'
-                        class='form-control card-cvc' placeholder='ex. 311' size='4'
-                        type='text'>
-                </div>
-                <div class='col-xs-4 form-group expiration required'>
-                    <label class='control-label'>Expiration</label> <input
-                        class='form-control card-expiry-month' placeholder='MM' size='2'
-                        type='text'>
-                </div>
-                <div class='col-xs-4 form-group expiration required'>
-                    <label class='control-label'> </label> <input
-                        class='form-control card-expiry-year' placeholder='YYYY' size='4'
-                        type='text'>
-                </div>
-            </div>
-            <div class='form-row'>
-                <div class='col-md-12'>
-                    <div class='form-control total btn btn-info'>
-                        Total: <span class='amount'>$300</span>
-                    </div>
-                </div>
-            </div>
-            <div class='form-row'>
-                <div class='col-md-12 form-group'>
-                    <button class='form-control btn btn-primary submit-button'
-                        type='submit' style="margin-top: 10px;">Pay »</button>
-                </div>
-            </div>
-            <div class='form-row'>
-                <div class='col-md-12 error form-group hide'>
-                    <div class='alert-danger alert'>Please correct the errors and try
-                        again.</div>
-                </div>
-            </div>
-    </form> -->
-<!-- </section>
 @endsection
