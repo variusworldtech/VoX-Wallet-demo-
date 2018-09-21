@@ -12,7 +12,7 @@
                         <li <?php if (strpos($uri, "/deposit") === 0) {echo(' class="navigation__active"');} ?>>
                             <a href="/deposit"><i class="zmdi zmdi-format-underlined"></i> Deposit</a>
                         </li>
-                        <li <?php if ($uri == "/withdraw") {echo(' class="navigation__active"');} ?>>
+                        <li <?php if (strpos($uri, "/withdraw") === 0) {echo(' class="navigation__active"');} ?>>
                             <a href="/withdraw"><i class="zmdi zmdi-widgets"></i> Withdraw</a>
                         </li>
                         <li <?php if ($uri == "/send") {echo(' class="navigation__active"');} ?>>
