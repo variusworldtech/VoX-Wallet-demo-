@@ -75,40 +75,29 @@
                 <li class="top-menu__alerts" data-mae-action="block-open" data-mae-target="#notifications" data-toggle="tab" data-target="#notifications__messages">
                     <a href=""><i class="zmdi zmdi-notifications"></i></a>
                 </li>
-                @guest
-                    <a href="{{URL::to('/login') }}"><li>Login</li></a>
-                    <a href="{{URL::to('/register') }}"><li>Signup</li>
-                @else
-                <div>
-                    <h1>{{ (Auth::user()->transactions->where('CreditOrDebit', 'Credit')->sum('amount')) - (Auth::user()->transactions->where('CreditOrDebit', 'Debit')->sum('amount')) }} VoX</h1>
-                </div>
-                    <li class="top-menu__profile dropdown">
-                        <a data-toggle="dropdown" href="">
-                            <img src="{{ Gravatar::fallback('https://missingtricks.net/wp-content/uploads/2018/01/Attitude-DP-1-1-300x300.jpg')->get(Auth::user()->email) }}" alt="It's {{ Auth::user()->name }}">
-                        </a>
-                            <a data-toggle="dropdown" href="">
-                            <img src="demo/img/profile-pics/1.jpg" alt="">
-                        </a>
-                            <a data-toggle="dropdown" href="" id="profile_pic">
-                            <img src="demo/img/profile-pics/1.jpg" alt="profile_pic">
-                        </a>
-                        <ul class="dropdown-menu pull-right dropdown-menu--icon">
-                            <li>
+                <li>
+                    <h4>{{ (Auth::user()->transactions->where('CreditOrDebit', 'Credit')->sum('amount')) - (Auth::user()->transactions->where('CreditOrDebit', 'Debit')->sum('amount')) }} VoX</h4>
+                </li>
+                <li class="top-menu__profile dropdown">
+                    <a data-toggle="dropdown" href="" id="profile_pic">
+                        <img src="{{ Gravatar::fallback('https://missingtricks.net/wp-content/uploads/2018/01/Attitude-DP-1-1-300x300.jpg')->get(Auth::user()->email) }}" alt="It's {{ Auth::user()->name }}">
+                    </a>
+                    <ul class="dropdown-menu pull-right dropdown-menu--icon">
+                        <li>
 
-                            <a href="{{URL::to('/profile') }}"><i class="zmdi zmdi-account"></i> {{ Auth::user()->name }}</a>
-                            </li>
-                            <li>
-                                <a href=""><i class="zmdi zmdi-input-antenna"></i> Privacy Settings</a>
-                            </li>
-                            <li>
-                                <a href=""><i class="zmdi zmdi-settings"></i> Settings</a>
-                            </li>
-                            <li>
-                                <a href="{{ URL::to('/logout') }}" id="logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="zmdi zmdi-time-restore"></i> Logout</a>
-                            </li>
-                        </ul>
-                    </li>
-                @endguest
+                        <a href="{{URL::to('/profile') }}"><i class="zmdi zmdi-account"></i> {{ Auth::user()->name }}</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="zmdi zmdi-input-antenna"></i> Privacy Settings</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="zmdi zmdi-settings"></i> Settings</a>
+                        </li>
+                        <li>
+                            <a href="{{ URL::to('/logout') }}" id="logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="zmdi zmdi-time-restore"></i> Logout</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
 
             <!-- <form class="top-search">
