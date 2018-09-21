@@ -11,21 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
-
 Auth::routes();
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware(['guest'])->group(function () {
+    Route::get('/', function () {
+        return view('welcome');
+    });
 });
 
 Route::middleware(['auth'])->group(function () {
 
     Route::get('/dashboard', 'DashboardController@index');
     Route::get('/transactions', 'TransactionsController@index');
-
 
     Route::get('/deposit', function () {
         return view('deposit');
@@ -67,7 +64,3 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/stake', 'WinController@stake');
     Route::get('/win', 'WinController@win');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

@@ -76,7 +76,7 @@
            
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        You are logged in. <a href="{{ url('/dashboard') }}">Dashboard</a>
                     @else                        
                         <a href="{{URL::to('/login') }}">Login</a>
                         <a href="{{URL::to('/register') }}">Signup</a>
