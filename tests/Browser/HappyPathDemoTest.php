@@ -42,10 +42,10 @@ class HappyPathDemoTest extends DuskTestCase
             $this->login('me@me.com');
             $this->verifyBalance(100);
             $this->sendVoXToFriend('A friend', 2, 40.0);
-            $this->verifyBalance(100); //todo: Shane make this 60 when send implemented
+            $this->verifyBalance(60);
             $this->logout();
             $this->login('a@friend.com');
-            $this->verifyBalance(0); //todo: Shane make this 40 when send implemented
+            $this->verifyBalance(40); 
             $this->logout();
         });
     }
@@ -161,8 +161,8 @@ class HappyPathDemoTest extends DuskTestCase
             ->waitUntilMissing('#page-loader')
             ->press('View profile')
             ->pause(1000)
-            ->type('amount'.$userId, $amount)
-            ->press('Send');
-            //->assertPathIs('/dashboard'); todo: Shane should be able to uncomment this when implemented
+            ->type('@amount'.$userId, $amount)
+            ->press('Send')
+            ->assertPathIs('/dashboard'); //todo: Shane should be able to uncomment this when implemented
     }
 }

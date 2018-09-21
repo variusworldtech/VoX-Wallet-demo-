@@ -97,6 +97,7 @@ class SendController extends Controller
         if (isset($_POST['email'])) {
             $users = User::get();
         }
-        return \View::make('send')->with(compact('message','message2', 'users', 'type', 'type2'));
+        //return \View::make('send')->with(compact('message','message2', 'users', 'type', 'type2'));
+        return redirect('dashboard');
     }
 }

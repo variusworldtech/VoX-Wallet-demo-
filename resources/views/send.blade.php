@@ -41,7 +41,7 @@
                                       <input type="hidden" class="form-control" id="email" name="email" value="{{ $user->email }}">
                                       <input type="hidden" class="form-control" id="user_id" name="user_id" value="{{ $user->id }}">
                                       <label for="amount">Amount</label>
-                                      <input type="number" step="0.01" class="form-control" id="amount" name="amount" placeholder="10" value="5" required>
+                                    <input type="number" step="0.01" class="form-control" id="amount" name="amount" dusk="amount{{ $loop->iteration }}" placeholder="10" value="5" required>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Send</button>
                                   </form>
