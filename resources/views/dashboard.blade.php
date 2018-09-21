@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
+<section id="content">
     <h1>Balance: {{ $balance }} VoX</h1>
    
     <br><br>
@@ -33,4 +34,5 @@
         Total number of transactions: <a href="/transactions">{{ $transactions->count() }}</a>
     @endif
 
+    </section>
 @endsection
