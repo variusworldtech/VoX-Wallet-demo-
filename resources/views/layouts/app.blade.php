@@ -73,6 +73,9 @@
             .widget-analytic__info>h2{
                 color: #fff;
             }
+            section#content {
+                padding:10px
+            }
       #header {
           user-select: none;
           padding: 10px 45px;
@@ -96,21 +99,10 @@
 
         <section id="main">
             @include('partials.navigation')
-            <header class="content__header" style="padding-top: 60px;">
+            {{-- <header class="content__header" style="padding-top: 60px;"> --}}
             @yield('content')
 
         </section>
-        <footer id="footer">
-            Copyright &copy; 2015 Material Admin
-
-            <ul class="footer__menu">
-                <li><a href="">Home</a></li>
-                <li><a href="">Dashboard</a></li>
-                <li><a href="">Reports</a></li>
-                <li><a href="">Support</a></li>
-                <li><a href="">Contact</a></li>
-            </ul>
-        </footer>
     </body>
 
 
