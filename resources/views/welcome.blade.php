@@ -24,7 +24,8 @@
 
             .logo {
                 height:70px;
-                        }
+                padding:20px;
+            }
 
             .full-height {
                 height: 100vh;
@@ -67,41 +68,33 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .links > a {
+                font-size: 32px;
+            }
+            .center {
+                text-align: center;
+                margin:auto;
+            }
         </style>
     </head>
     <body>
-
-        <div class="flex-center position-ref full-height col-sm">
-            <img src="https://variusworldtech.com/images/poker_chip-token-NEW.png"  style="width:150px">
-           
-                <div class="top-right links">
-                    @auth
-                        You are logged in. <a href="{{ url('/dashboard') }}">Dashboard</a>
-                    @else                        
-                        <a href="{{URL::to('/login') }}">Login</a>
-                        <a href="{{URL::to('/register') }}">Signup</a>
-                    @endauth
-                </div>
-           
-
-            <div class="content">
-                <div class=" m-b-md">
-                    <img class="logo logo-light" alt="logo" src="https://variusworldtech.com/images/varius_world_tech-logo.png">
-                    
-                    <p>Varius World Technology are excited to launch our new ICO raising funds to developer our inductsty specific Distributed Ledger Technology protocol. </p>
-
-                    <p>Browse our site and see for yourself why you should invest in VWT!</p>
-                </div>
-
-
-                <!-- <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div> -->
+        <div class="logo">
+            <img class="logo logo-light" alt="logo" src="https://variusworldtech.com/images/varius_world_tech-logo.png">
+        </div>
+        
+        <br/> <br/> <br/> <br/> <br/>
+        <div class="center" style="width:80%"> 
+            <div class="content flex-center" style="vertical-align:center;height:100px">
+                    <img src="https://variusworldtech.com/images/poker_chip-token-NEW.png"  style="float:left;width:150px">
+                
+                    <div class="links">
+                                             
+                                <a href="{{URL::to('/login') }}">Login</a>
+                                <a href="{{URL::to('/register') }}">Signup</a>
+                           
+                        </div> 
+                
             </div>
         </div>
     </body>

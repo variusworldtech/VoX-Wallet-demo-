@@ -35,7 +35,10 @@ class SendController extends Controller
       $amount = $_POST['amount'];
       $connected_user_id = \Auth::user()->id;
       $user_id = $_POST['user_id'];
-      //
+
+      $recipient = \Auth::user()->where('id', $user_id)->first();
+      $sender = \Auth::user();
+
       // var_dump($name);
       // var_dump($email);
       // var_dump($amount);
@@ -56,20 +59,20 @@ class SendController extends Controller
             $transactionFrom->amount = $amount;
             $transactionFrom->stripeToken = '';
             $transactionFrom->CreditOrDebit = 'Debit';
-            $transactionFrom->paymentMode = 'Peer Sent';
+            $transactionFrom->paymentMode = 'Sent '.$amount.' to '.$recipient->name;
             //Create new Transactions object for recieve
             $transactionTo = new Transaction();
             $transactionTo->user_id = $user_id;
             $transactionTo->amount = $amount;
             $transactionFrom->stripeToken = '';
             $transactionTo->CreditOrDebit = 'Credit';
-            $transactionTo->paymentMode = 'Peer Sent';
+            $transactionTo->paymentMode = 'Received '.$amount.' from '.$sender->name;
             //Attepts to save new transaction to the transactions table
             try {
-                \Auth::user()->transactions()->save($transactionFrom);
+                $sender->transactions()->save($transactionFrom);
                 $message .= "1) ";
                 $message .= "Amount sent from: ";
-                $message .= \Auth::user()->username;
+                $message .= $sender->username;
                 $message .= "<br>";
                 $type .= "success";
             } catch (Exception $e) {
@@ -80,7 +83,7 @@ class SendController extends Controller
                 $type .= "danger";
             }
             try {
-                \Auth::user()->where('id', $user_id)->first()->transactions()->save($transactionTo);
+                $recipient->transactions()->save($transactionTo);
                 $message2 .= "2) ";
                 $message2 .= "Amount recieved by: ";
                 $message2 .= $transactionTo->user_id;

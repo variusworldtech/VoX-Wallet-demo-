@@ -54,7 +54,6 @@ class HappyPathDemoTest extends DuskTestCase
         $this->browser
             ->visit('/')
             ->waitUntilMissing('#page-loader')
-            ->assertSee('Varius')
             ->clickLink('Signup')
             ->assertSee('Register')
             ->type('name', $name)
