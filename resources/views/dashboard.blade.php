@@ -2,13 +2,14 @@
 @section('content')
 
 <section id="content">
-    <h1>Balance: {{ $balance }} VoX</h1>
-   
-    <br><br>
+    <div class="breadcrumb">Dashboard</div>
+    <div class="well" style="text-align:center"><span style="font-size:72px">{{ $balance }}</span> VoX</div>
 
-    @if ($balance <= 0)
+    @if ($balance == 0)
      <a href="/deposit">Ready to play? Load some VoX now</a>
-    @else
+    @endif
+    <div class="well">
+    @if ($transactions->count() != 0)
         <h2>Recent transactions</h2>
 
         <table class="table table-sm">
@@ -33,6 +34,7 @@
         </table>
         Total number of transactions: <a href="/transactions">{{ $transactions->count() }}</a>
     @endif
+    </div>
 
     </section>
 @endsection

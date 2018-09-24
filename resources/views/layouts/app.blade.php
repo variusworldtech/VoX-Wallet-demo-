@@ -53,7 +53,7 @@
                 background: #03285d;
             }
             #main{
-                background: #fff;
+                background: #f5f5f5;
             }
             .top-search__input{
                 background: #fff;
@@ -74,7 +74,11 @@
                 color: #fff;
             }
             section#content {
-                padding:10px
+                padding:10px;
+                background-color: #f5f5f5
+            }
+            .well {
+                background-color: #fff
             }
       #header {
           user-select: none;
