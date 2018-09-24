@@ -80,6 +80,22 @@
             .well {
                 background-color: #fff
             }
+            .table>thead>tr>th {
+                vertical-align: bottom;
+                border-bottom: 2px solid #ddd;
+            }
+            .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+                padding: 15px;
+                line-height: 1.42857143;
+                vertical-align: top;
+                border-top: 1px solid #eee;
+            }
+            .form-control {
+                width: 100%;
+                height: 35px;
+                background-color: transparent;
+                border: 1px solid #ddd; 
+            }
       #header {
           user-select: none;
           padding: 10px 45px;

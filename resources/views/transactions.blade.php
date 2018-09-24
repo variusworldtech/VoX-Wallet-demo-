@@ -12,15 +12,15 @@
                 @else
                 <div class="col-sm-10">
                     <table class="table table-hover">
-                            <thead>
+                        <thead>
                             <tr>
                                 <th scope="col">Date</th>
                                 <th scope="col">Amount</th>
                                 <th scope="col">Credit|Debit</th>
                                 <th scope="col">Payment mode</th>
                             </tr>
-                            </thead>
-                            <tbody>
+                        </thead>
+                        <tbody>
                                 @foreach($transactions as $transaction)
                                 <tr>
                                     <td>{{ $transaction->created_at }} </td>
@@ -29,7 +29,7 @@
                                     <td>{{ $transaction->paymentMode }} </td>
                                 </tr>
                                 @endforeach
-                            </tbody>
+                        </tbody>
                     </table>
                 </div>
                 @endif
