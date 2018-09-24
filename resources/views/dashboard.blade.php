@@ -2,9 +2,7 @@
 @section('content')
 
 <section id="content">
-    <div class="breadcrumb">Dashboard</div>
     <div class="well" style="text-align:center"><span style="font-size:72px">{{ number_format ($balance) }}</span> VoX</div>
-
     @if ($balance == 0)
      <a href="/deposit">Ready to play? Load some VoX now</a>
     @endif
