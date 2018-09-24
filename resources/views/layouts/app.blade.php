@@ -96,6 +96,14 @@
                 background-color: transparent;
                 border: 1px solid #ddd; 
             }
+            .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+                color: #555;
+            }
+            .balance
+            {
+                color: #eee;
+                font-size: 24px
+            }
       #header {
           user-select: none;
           padding: 10px 45px;
