@@ -6,23 +6,21 @@
 
                 <div class="navigation__menu c-overflow">
                     <ul>
-                        <li <?php if ($uri == "/dashboard") {echo(' class="navigation__active"');} ?>>
-                            <a href="/dashboard"><i class="zmdi zmdi-home"></i>Dashboard</a>
-                        </li>
+                      
                         <li <?php if (strpos($uri, "/deposit") === 0) {echo(' class="navigation__active"');} ?>>
-                            <a href="/deposit"><i class="zmdi zmdi-format-underlined"></i> Deposit</a>
+                            <a href="/deposit"><i class="zmdi zmdi-upload"></i> Get VoX</a>
                         </li>
                         <li <?php if (strpos($uri, "/withdraw") === 0) {echo(' class="navigation__active"');} ?>>
-                            <a href="/withdraw"><i class="zmdi zmdi-widgets"></i> Withdraw</a>
+                            <a href="/withdraw"><i class="zmdi zmdi-arrow-back"></i> Withdraw</a>
                         </li>
                         <li <?php if ($uri == "/send") {echo(' class="navigation__active"');} ?>>
-                            <a href="/send"><i class="zmdi zmdi-widgets"></i> Send</a>
+                            <a href="/send"><i class="zmdi zmdi-arrow-forward"></i> Send</a>
                         </li>
                         <li  <?php if ($uri == "/card") {echo(' class="navigation__active"');} ?>>
-                            <a href="/card"><i class="zmdi zmdi-widgets"></i> VoX Card</a>
+                            <a href="/card"><i class="zmdi zmdi-card"></i> VoX Card</a>
                         </li>
                         <li  <?php if ($uri == "/transactions") {echo(' class="navigation__active"');} ?>>
-                            <a href="/transactions"><i class="zmdi zmdi-widgets"></i>Transactions</a>
+                            <a href="/transactions"><i class="zmdi zmdi-wrap-text"></i>Transactions</a>
                         </li>
                         <!-- <li <?php if ($uri == "/settings") {echo(' class="navigation__active"');} ?>>
                             <a href="/settings"><i class="zmdi zmdi-widgets"></i> Settings</a>

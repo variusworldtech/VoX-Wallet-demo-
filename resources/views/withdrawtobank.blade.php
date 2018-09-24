@@ -2,9 +2,7 @@
 @section('content')
 
 		<section id="content">
-			<header class="content__header">
-				<h1>Withdrawing to bank account</h1>
-			</header>
+                <div class="breadcrumb"><a href="/withdraw">Withdraw</a> > Withdraw to bank account</div>
 			<div id="content__grid" data-columns>
                 <form action="/withdrawToBankAttempt" method="POST" id="withdrawToBankAttempt">
                     {{ csrf_field() }}
