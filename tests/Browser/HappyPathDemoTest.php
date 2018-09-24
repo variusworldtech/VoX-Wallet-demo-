@@ -87,7 +87,7 @@ class HappyPathDemoTest extends DuskTestCase
 
     function verifyDashboardFirstVisitAndNavigateToDeposit() {
         $this->browser
-            ->assertSee('Balance: 0 VoX')
+            ->assertSee('0 VoX')
             ->clickLink('Ready to play? Load some VoX now')
             ->assertPathIs('/deposit');
     }
@@ -123,13 +123,13 @@ class HappyPathDemoTest extends DuskTestCase
             ->waitUntilMissing('.fadeInUp')
             ->press('Submit Payment')
             ->waitForLocation('/dashboard')
-            ->assertSee('Balance: ' . $amount . ' VoX');
+            ->assertSee($amount . ' VoX');
     }
 
     function verifyBalance(float $balance) {
         $this->browser
             ->visit('/dashboard')
-            ->assertSee('Balance: ' . $balance . ' VoX');
+            ->assertSee($balance . ' VoX');
     }
 
     function winVoX() {

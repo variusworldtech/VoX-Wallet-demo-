@@ -53,7 +53,7 @@
                 background: #03285d;
             }
             #main{
-                background: #fff;
+                background: #f5f5f5;
             }
             .top-search__input{
                 background: #fff;
@@ -74,7 +74,35 @@
                 color: #fff;
             }
             section#content {
-                padding:10px
+                padding:10px;
+                background-color: #f5f5f5
+            }
+            .well {
+                background-color: #fff
+            }
+            .table>thead>tr>th {
+                vertical-align: bottom;
+                border-bottom: 2px solid #ddd;
+            }
+            .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+                padding: 15px;
+                line-height: 1.42857143;
+                vertical-align: top;
+                border-top: 1px solid #eee;
+            }
+            .form-control {
+                width: 100%;
+                height: 35px;
+                background-color: transparent;
+                border: 1px solid #ddd; 
+            }
+            .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+                color: #555;
+            }
+            .balance
+            {
+                color: #eee;
+                font-size: 24px
             }
       #header {
           user-select: none;

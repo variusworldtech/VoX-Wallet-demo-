@@ -2,22 +2,22 @@
 @section('content')
 
 		<section id="content">
-			<header class="content__header">
+			{{-- <header class="content__header">
 				<h1>Withdraw methods</h1>
-			</header>
+			</header> --}}
+			<p>Withdraw</p>
 			<div id="content__grid" data-columns>
 
-				<div class="card widget-pictures">
-					<div class="card__header">
-						<h2>Bank account
+					<div class="well">
+						<h2>Bank account</h2>
 							<small>
 								FEES: 0 GBP<br>
 								Wait time: 0 - 2 hours
 							</small>
-						</h2>
+							<br/><br/>
+							<a href="/withdrawtobank" class="btn btn-sm btn-default" role="button">Withdraw to bank account</a>
 					</div>
-					<br/>
-					<a href="/withdrawtobank" class="btn btn-sm btn-default" role="button">Withdraw to bank account</a>
+					
 				</div>
 			</div>
 		</section>

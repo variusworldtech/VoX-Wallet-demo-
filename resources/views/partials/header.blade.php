@@ -76,7 +76,7 @@
                     <a href=""><i class="zmdi zmdi-notifications"></i></a>
                 </li>
                 <li>
-                    <h4>{{ (Auth::user()->transactions->where('CreditOrDebit', 'Credit')->sum('amount')) - (Auth::user()->transactions->where('CreditOrDebit', 'Debit')->sum('amount')) }} VoX</h4>
+                    <div class="balance">{{ (Auth::user()->transactions->where('CreditOrDebit', 'Credit')->sum('amount')) - (Auth::user()->transactions->where('CreditOrDebit', 'Debit')->sum('amount')) }} VoX &nbsp;</div>
                 </li>
                 <li class="top-menu__profile dropdown">
                     <a data-toggle="dropdown" href="" id="profile_pic">
