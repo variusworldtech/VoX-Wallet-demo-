@@ -8,17 +8,25 @@
               <br>
               <input type="search" id="search" value="" class="form-control" placeholder="Search for user">
             </div>
-            <div class="well">
+            <div id="users-list" class="well hidden">
   
+                <div id="no-users-found" class="hidden">
+                    <td>
+                        no-users-found
+                    </td>
+                  </div>
+
               <table class="table" id="table">
                 <br>
                   <tbody>
-                    @foreach($users as $user)
+                    
+                    @foreach($users->where('id', '!=', Auth::user()->id) as $user)
                     <tr>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td><button class="btn btn-primary" data-toggle="modal" data-target="#{{ $loop->iteration }}">View profile</button></td>
                     </tr>
+                   
 
                     <!-- Modal -->
                     <div class="modal fade" id="{{ $loop->iteration }}" tabindex="-1" role="dialog" aria-labelledby="{{ $loop->iteration }}" aria-hidden="true">
@@ -35,7 +43,7 @@
                                 <input type="hidden" class="form-control" id="email" name="email" value="{{ $user->email }}">
                                 <input type="hidden" class="form-control" id="user_id" name="user_id" value="{{ $user->id }}">
                                 <label for="amount">Amount</label>
-                                <input type="number" step="0.01" class="form-control" id="amount" name="amount" dusk="amount{{ $loop->iteration }}" placeholder="10" value="5" required min="5" max="{{ (Auth::user()->transactions->where('CreditOrDebit', 'Credit')->sum('amount')) - (Auth::user()->transactions->where('CreditOrDebit', 'Debit')->sum('amount')) }}">
+                                <input type="number" step="0.01" class="form-control" id="amount" name="amount" dusk="amount{{ $user->id }}" placeholder="10" value="5" required min="5" max="{{ (Auth::user()->transactions->where('CreditOrDebit', 'Credit')->sum('amount')) - (Auth::user()->transactions->where('CreditOrDebit', 'Debit')->sum('amount')) }}">
                               </div>
                               <button type="submit" class="btn btn-primary">Send</button>
                             </form>
@@ -57,10 +65,17 @@
         <script>
           $(document).ready(function(){
             $("#search").on("keyup", function() {
-              var value = $(this).val().toLowerCase();
+               var value = $(this).val().toLowerCase();
+               if ($(this).val().length !== 0) {
+                 $("#users-list").removeClass("hidden");
+                 $("#no-users-found").addClass("hidden");
+               }
+               else {
+                 $("#users-list").addClass("hidden");
+               }
+
               $("#table tr").filter(function() {
-                console.log('this', this);
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) >= 0);
               });
             });
           });

@@ -2,7 +2,6 @@
         @section('content')
             
                 <section id="content">
-                    <div class="breadcrumb">Deposit</div>
                     {{-- <header class="content__header">
                      <h1>Deposit</h1> 
                     </header> --}}
