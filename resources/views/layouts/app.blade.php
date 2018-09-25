@@ -107,7 +107,7 @@
             .balance
             {
                 color: #eee;
-                font-size: 24px
+                font-size: 24px;
             }
             /* for custom icons in the nav to render in right place*/
             .navigation__menu ul>li>a>img {
@@ -129,6 +129,18 @@
           margin-bottom: 0px;
 
       }
+   
+        #fixedbutton {
+            position: fixed;
+            bottom: 0px;
+            right: 0px; 
+        }
+        #fixedreset {
+            position: fixed;
+            bottom: 0px;
+            left: 0px; 
+
+        }
         </style>
     </head>
     <body>
@@ -148,12 +160,10 @@
             @include('partials.navigation')
             {{-- <header class="content__header" style="padding-top: 60px;"> --}}
             @yield('content')
-
+            <a href="/stake" role="button" id="fixedbutton"><img style="width:40px" src="{{ asset('img/poker_chip.png')}}"></a>
         </section>
     </body>
 
-
-        </section>
 
         <!-- Older IE Warning -->
         <!--[if lt IE 9]>

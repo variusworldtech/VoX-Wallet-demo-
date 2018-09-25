@@ -13,14 +13,17 @@
                     <a href=""><i class="zmdi zmdi-notifications"></i></a>
                 </li> --}}
                 <li>
+                    <img style="width:34px" src="{{ asset('img/icons/wallet_icon.png') }}"/>
+                </li>
+                <li>
                     <div class="balance">{{ (Auth::user()->transactions->where('CreditOrDebit', 'Credit')->sum('amount')) - (Auth::user()->transactions->where('CreditOrDebit', 'Debit')->sum('amount')) }} <span style="font-size:16px">VoX &nbsp;</div>
                 </li>
                 <li class="top-menu__profile dropdown">
                     <a data-toggle="dropdown" href="" id="profile_pic">
-                           
                         <img src="{{ Gravatar::fallback('https://missingtricks.net/wp-content/uploads/2018/01/Attitude-DP-1-1-300x300.jpg')->get(Auth::user()->email) }}" alt="{{ Auth::user()->name }}">
-                       &nbsp; {{ Auth::user()->name }}
+                      
                     </a>
+                    
                     <ul class="dropdown-menu pull-right dropdown-menu--icon">
                         <li>
 

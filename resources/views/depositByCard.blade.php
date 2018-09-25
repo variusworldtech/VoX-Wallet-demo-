@@ -2,6 +2,7 @@
 @section('content')
 
 <section id="content">
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
         <div class="breadcrumb"><a href="/deposit">Deposit</a> > DepositByCard</div>
          <!-- {{ print_r($_POST) }}
         {{ print_r($_GET) }} -->
@@ -64,10 +65,10 @@
                 @endif
                 <form action="/depositByCard" method="POST" id="payment-form">
                     {{ csrf_field() }}
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label for="email">Email Address</label>
                         <input type="email" class="form-control" id="email" value="{{ Auth::user()->email }}" required>
-                    </div>
+                    </div> --}}
 
                     <div class="form-group">
                         <label for="name_on_card">Name on Card</label>
@@ -75,31 +76,31 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-6">
+                        {{-- <div class="col-md-6">
                             <div class="form-group">
                                 <label for="address">Address</label>
                                 <input type="text" class="form-control" id="address" name="address">
                             </div>
-                        </div>
+                        </div> --}}
 
-                        <div class="col-md-3">
+                        {{-- <div class="col-md-3">
                             <div class="form-group">
                                 <label for="city">City</label>
                                 <input type="text" class="form-control" id="city" name="city">
                             </div>
-                        </div>
+                        </div> --}}
 
-                        <div class="col-md-3">
+                        {{-- <div class="col-md-3">
                             <div class="form-group">
                                 <label for="province">Province</label>
                                 <input type="text" class="form-control" id="province" name="province">
                             </div>
-                        </div>
+                        </div> --}}
 
-                    </div>
+                    </div> 
 
                     <div class="row">
-                        <div class="col-md-4">
+                        {{-- <div class="col-md-4">
                             <div class="form-group">
                                 <label for="postalcode">Postal Code</label>
                                 <input type="text" class="form-control" id="postalcode" name="postalcode">
@@ -118,7 +119,7 @@
                                 <label for="phone">Phone</label>
                                 <input type="text" class="form-control" id="phone" name="phone">
                             </div>
-                        </div>
+                        </div> --}} 
 
                         <div class="col-md-4">
                             <div class="form-group">
@@ -128,6 +129,8 @@
                         </div>
 
                     </div>
+                    
+                    {{-- <button type="button" id="testCard">Use Test Card</button> --}}
 
                     <div class="form-group">
                         <label for="card-element">Credit Card</label>
@@ -141,9 +144,10 @@
 
                     <div class="spacer"></div>
 
-                    <button type="submit" class="btn btn-success">Submit Payment</button>
+                    <button type="submit" class="btn btn-primary">Submit Payment</button>
                 </form>
-            </div>
+                    
+            </div> 
         </div>
 
         <script>
@@ -216,6 +220,14 @@
                   form.submit();
                 }
             })();
+
+            $('#testCard').click(function(){
+                $('__privateStripeFrame3')
+                    .contents()
+                    .find('input[name="cardnumber"]')
+                    .val('4242 4242 4242 4242');
+            });
+
         </script>
 
 @endsection

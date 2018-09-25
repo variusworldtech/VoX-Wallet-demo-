@@ -11,6 +11,16 @@ class WinController extends Controller
 {
     public function stake()
     {
+        $transactions = \Auth::user()->transactions()->orderBy('created_at', 'desc')->get();
+
+        $credits = $transactions->where('CreditOrDebit', 'Credit')->sum('amount');
+        $debits = $transactions->where('CreditOrDebit', 'Debit')->sum('amount');
+        $balance = $credits - $debits;
+
+        if ($balance < 50) {
+            return redirect('deposit');
+        }
+
         $transaction = new Transaction();
         $transaction->amount = 50;
         $transaction->paymentMode = 'WinBerry STAKE';
@@ -19,7 +29,8 @@ class WinController extends Controller
 
         \Auth::user()->transactions()->save($transaction);
 
-        return redirect('dashboard');
+        $win = rand(0,1);
+        return redirect('dashboard?win='.$win);
     }
 
     public function win()
@@ -32,6 +43,12 @@ class WinController extends Controller
 
         \Auth::user()->transactions()->save($transaction);
       
+        return redirect('dashboard');
+    }
+
+    public function resetusersdata()
+    {
+        \App\Transaction::where('user_id', \Auth::user()->id)->delete();
         return redirect('dashboard');
     }
 }

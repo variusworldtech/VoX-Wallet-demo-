@@ -12,7 +12,7 @@ class HappyPathDemoTest extends DuskTestCase
     use RefreshDatabase;
 
     private $browser;
-    
+
     /**
      * A basic happy path test for the demo.
      *
@@ -45,7 +45,7 @@ class HappyPathDemoTest extends DuskTestCase
             $this->verifyBalance(60);
             $this->logout();
             $this->login('a@friend.com');
-            $this->verifyBalance(40); 
+            $this->verifyBalance(40);
             $this->logout();
         });
     }
@@ -70,7 +70,7 @@ class HappyPathDemoTest extends DuskTestCase
             ->click('#profile_pic')
             ->click('#logout')
             ->assertPathIs('/');
-                    
+
     }
 
     function login(string $email) {
@@ -116,13 +116,13 @@ class HappyPathDemoTest extends DuskTestCase
             ->type('input[name="cardnumber"]', '4242 4242 4242 4242')
             ->type('input[name="exp-date"]', '11 20')
             ->keys('input[name="cvc"]', '112');
-            
+
         $this->browser->driver->switchTo()->defaultContent();
-            
+
         $this->browser
             ->waitUntilMissing('.fadeInUp')
             ->press('Submit Payment')
-            ->waitForLocation('/dashboard')
+            ->waitForLocation('/dashboard', '15')
             ->assertSee($amount . ' VoX');
     }
 

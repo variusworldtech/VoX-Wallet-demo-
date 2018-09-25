@@ -80,13 +80,13 @@
     </head>
     <body>
         <div class="logo">
-            <img class="logo logo-light" alt="logo" src="https://variusworldtech.com/images/varius_world_tech-logo.png">
+            <img class="logo logo-light" alt="logo" src="{{ asset('img/vwt-logo.png')}}">
         </div>
         
         <br/> <br/> <br/> <br/> <br/>
         <div class="center" style="width:80%"> 
             <div class="content flex-center" style="vertical-align:center;height:100px">
-                    <img src="https://variusworldtech.com/images/poker_chip-token-NEW.png"  style="float:left;width:150px">
+            <img src="{{ asset('img/poker_chip.png')}}"  style="float:left;width:150px">
                 
                     <div class="links">
                                              

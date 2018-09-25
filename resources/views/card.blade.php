@@ -12,16 +12,18 @@
                                     {{ csrf_field() }}
                                     
                                     <div class="form-group">
+                                            <label for="name">Full name*</label>
+                                            <input type="text" class="form-control" id="name" name="name" required>
+                                    </div>
+
+                                    <div class="form-group">
                                         <label for="email">Email Address*</label>
                                         <input type="email" class="form-control" id="email" name="email" required>
                                     </div>
         
-                                    <div class="form-group">
-                                        <label for="name">Full name*</label>
-                                        <input type="text" class="form-control" id="name" name="name" required>
-                                    </div>
+                                   
         
-                                    <div class="row">
+                                    {{-- <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="address">Address</label>
@@ -41,10 +43,10 @@
                                                 <label for="province">Province</label>
                                                 <input type="text" class="form-control" id="province" name="province">
                                             </div>
-                                        </div>
+                                        </div> 
         
-                                    </div>
-        
+                                    </div> --}}
+{{--         
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
@@ -67,14 +69,14 @@
                                             </div>
                                         </div>
         
-                                    </div>
+                                    </div> --}}
         
-                                    <button type="submit" class="btn btn-success">Apply</button>
+                                    <button type="submit" class="btn btn-primary">Apply</button>
                                 </form>
                             </div>   
-                            <div class="col-sm-1"></div>
+                           
                     <div class="col-sm-5">
-                        <br><br><br>
+                        
                         <br/>
                         <img style="width:300px" src="{{ asset('img/vox_card-mockup.png') }}"/>
                     </div>

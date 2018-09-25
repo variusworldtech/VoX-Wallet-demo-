@@ -9,7 +9,7 @@
             @if(!isSet(Auth::user()->walletAddress))
                 <form action="/depositsaveaddress" method="POST" id="depositsaveaddress">
                     {{ csrf_field() }}
-                    <b>Your wallet address:</b> <input type="text" required pattern="^0x[a-fA-F0-9]{40}$" name="walletAddress" id="walletAddress">
+                    <b>Your wallet address:</b> <input type="text" required pattern="^0x[a-fA-F0-9]{40}$" name="walletAddress" id="walletAddress" value="0x08d0c9a119626dab7d01330ca7e9789dc71e4158">
                     <input type="submit" value="Associate Wallet">
                 </form>
             @else
@@ -42,7 +42,7 @@
                 </div>
                 <br/>
                 <div>
-                    <a href="/depositByCard" class="btn btn-sm btn-default" role="button">Load VoX now</a>
+                    <a href="/depositByCard" class="btn btn-primary" role="button">Load VoX now</a>
                 </div>
             </div>
         </div>

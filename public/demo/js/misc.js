@@ -29,7 +29,7 @@ $(window).load(function(){
     }
 
     if (!$('.login, .four-zero')[0]) {
-        notify('Welcome back', '-light');
+        //notify('Welcome back dddd', '-light');
     }
 });
 
