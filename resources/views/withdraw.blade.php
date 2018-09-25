@@ -11,13 +11,13 @@
 								Wait time: 0 - 2 hours
 							</small>
 							<br/><br/>
-							<a href="/withdrawtobank" class="btn btn-sm btn-default" role="button">Withdraw to bank account</a>
+							<a href="/withdrawtobank" class="btn btn-primary" role="button">Withdraw to bank account</a>
 					</div>
 
 					<div class="well">
 							<h2>Withdraw to paypal</h2>
 								<br/><br/>
-								<a style="background: lightblue" href="/withdrawtopaypal" class="btn btn-sm btn-default" role="button">Withdraw to paypal</a>
+								<a href="/withdrawtopaypal" class="btn btn-primary" role="button">Withdraw to paypal</a>
 						</div>
 					
 				</div>
