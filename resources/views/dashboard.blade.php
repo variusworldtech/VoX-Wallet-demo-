@@ -4,8 +4,8 @@
 <section id="content">
     <div class="well" style="text-align:center">
             <?php $vwtSymbol = 'asdfasdf' ?>
-        <span style="font-size:72px">{{ number_format ($balance) }}</span> VoX
-        <div class="pull-right">equivalent to $<span style="">{{ number_format ($balance) }}, or £{{ number_format ($balance/1.3) }}</span></div>
+        <span style="font-size:72px">{{ number_format ($balance, 2) }}</span> VoX
+        <div class="pull-right">equivalent to $<span style="">{{ number_format ($balance, 2) }}, or £{{ number_format ($balance/1.3) }}</span></div>
     </div>
 
     <div class="well">

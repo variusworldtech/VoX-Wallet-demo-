@@ -7,7 +7,7 @@
         <div class="col-xs-12 offset-xs-1 col-sm-11 offset-sm-2 col-md-11 offset-md-2 col-lg-8 offset-lg-0">
             <div class="well">
 
-                    <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
+                    <form id="registerForm" method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -74,7 +74,7 @@
                     <button id="account1" class="btn">Shane</button>
                     <button id="account2" class="btn">Andy</button>
                     <button id="account3" class="btn">Sherline</button>
-                    <button id="account3" class="btn">James</button>
+                    <button id="account4" class="btn">James</button>
             </div>
         </div>
     </div>
@@ -84,28 +84,32 @@
 <script>
   $(document).ready(function(){
     $("#account1").click(function() {
-       $("#name").val("shane");
+       $("#name").val("Shane Benjamin");
        $("#email").val("s.benjamin@variusworldtech.com");
        $("#password").val("password");
        $("#password-confirm").val("password");
+       $('#registerForm').submit();
     });
     $("#account2").click(function() {
-      $("#name").val("andy");
+      $("#name").val("Andy Davis");
       $("#email").val("andy@tenkaisolutions.com");
       $("#password").val("password");
       $("#password-confirm").val("password");
+      $('#registerForm').submit();
     });
     $("#account3").click(function() {
-      $("#name").val("sherline");
-      $("#email").val("sherlineserrao@gmail.com");
+      $("#name").val("Shirline Serrao");
+      $("#email").val("shirlineserrao@gmail.com");
       $("#password").val("password");
       $("#password-confirm").val("password");
+      $('#registerForm').submit();
     });
     $("#account4").click(function() {
-      $("#name").val("james");
+      $("#name").val("James Vince");
       $("#email").val("james@variusworldtech.com");
       $("#password").val("password");
       $("#password-confirm").val("password");
+      $('#registerForm').submit();
     });
   });
 </script>

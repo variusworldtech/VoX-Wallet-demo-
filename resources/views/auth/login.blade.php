@@ -8,7 +8,7 @@
         <div class="col-xs-12 offset-xs-1 col-sm-11 offset-sm-2 col-md-11 offset-md-2 col-lg-8 offset-lg-0">
             <div class="well">
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
+                    <form id="loginForm" method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -65,10 +65,10 @@
                     </form>
 
                     <br>
-                    <button id="account1" class="btn">Account 1</button>
-                    <button id="account2" class="btn">Account 2</button>
-                    <button id="account3" class="btn">Account 3</button>
-                    <button id="account3" class="btn">Account 4</button>
+                    <button id="account1" class="btn">Shane</button>
+                    <button id="account2" class="btn">Andy</button>
+                    <button id="account3" class="btn">Shirline</button>
+                    <button id="account4" class="btn">James</button>
                 </div>
             </div>
         </div>
@@ -80,18 +80,22 @@
     $("#account1").click(function() {
        $("#email").val("s.benjamin@variusworldtech.com");
        $("#password").val("password");
+       $('#loginForm').submit();
     });
     $("#account2").click(function() {
        $("#email").val("andy@tenkaisolutions.com");
        $("#password").val("password");
+       $('#loginForm').submit();
     });
     $("#account3").click(function() {
-       $("#email").val("sherlineserrao@gmail.com");
+       $("#email").val("shirlineserrao@gmail.com");
        $("#password").val("password");
+       $('#loginForm').submit();
     });
     $("#account4").click(function() {
        $("#email").val("james@variusworldtech.com");
        $("#password").val("password");
+       $('#loginForm').submit();
     });
   });
 </script>
