@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-5 offset-md-2">
+        <div class="col-xs-12 offset-xs-1 col-sm-11 offset-sm-2 col-md-11 offset-md-2 col-lg-8 offset-lg-0">
             <div class="well">
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
@@ -55,8 +55,8 @@
                                     {{ __('Login') }}
                                 </button>
                                 &nbsp;&nbsp;
-                                
-                                
+
+
                             </div>
                         </div>
                         <a style="color:mediumblue" href="{{URL::to('/register') }}">Need an account? Signup now</a>

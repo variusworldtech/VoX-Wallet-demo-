@@ -3,9 +3,8 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-5">
+        <div class="col-xs-12 offset-xs-1 col-sm-11 offset-sm-2 col-md-11 offset-md-2 col-lg-8 offset-lg-0">
             <div class="well">
-
 
                     <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
                         @csrf
@@ -68,7 +67,7 @@
                             </div>
                         </div>
                     </form>
-             
+
             </div>
         </div>
     </div>
