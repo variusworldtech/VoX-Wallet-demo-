@@ -11,7 +11,7 @@
     </div>
 
     <div class="well">
-       <input id="winOrLoose" type="hidden" value="{{ $win }}">
+       <input id="winOrLose" type="hidden" value="{{ $win }}">
             @if ($balance == 0)
             <a href="/deposit">Ready to play? Load some VoX now</a>
            @endif
@@ -29,7 +29,7 @@
                 </thead>
                 <tbody>
 
-                    @foreach($transactions->take(5) as $transaction)
+                    @foreach($transactions->take(4) as $transaction)
                     <tr>
                         <td>{{ $transaction->created_at }} </td>
                         <td>{{ $transaction->amount }} </td>
@@ -47,22 +47,22 @@
     $(document).ready(function(){
 
         setTimeout(function() {
-            var winOrLoose = $("#winOrLoose").val();
+            var winOrLose = $("#winOrLose").val();
 
-            if(winOrLoose === "1"){              
+            if(winOrLose === "1"){              
                 swal({
-                  title: "Yayy..!! you've won!!",
+                  title: "Congratulations! You just won 100 VoX.",
                   confirmButtonText: 'OK',
                   onClose: () => {
                      window.location.replace("/win");
                   }});
-             } else if(winOrLoose  === "0" ){
+             } else if(winOrLose  === "0" ){
 
                 swal({
-                  title: "You loose",
+                  title: "You didn't win this time, better luck next time.",
                   confirmButtonText: 'OK',
                   onClose: () => {
-                     window.location.replace("/dashboard");
+                    window.location.replace("/dashboard");
                   }
                 });
             }

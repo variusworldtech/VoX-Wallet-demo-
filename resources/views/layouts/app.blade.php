@@ -129,18 +129,18 @@
           margin-bottom: 0px;
 
       }
-    /*  .fixedbutton {
-    position: fixed;
-    bottom: 560px;
-    right: 1000px; 
-    }*/
+   
+        #fixedbutton {
+            position: fixed;
+            bottom: 0px;
+            right: 0px; 
+        }
+        #fixedreset {
+            position: fixed;
+            bottom: 0px;
+            left: 0px; 
 
-    #fixedbutton {
-    position: fixed;
-    bottom: 0px;
-    right: 0px; 
-}
-}
+        }
         </style>
     </head>
     <body>
@@ -160,7 +160,7 @@
             @include('partials.navigation')
             {{-- <header class="content__header" style="padding-top: 60px;"> --}}
             @yield('content')
-            <a href="/stake" role="button" id="fixedbutton">Place a bet</a>
+            <a href="/stake" role="button" id="fixedbutton"><img style="width:40px" src="{{ asset('img/poker_chip.png')}}"></a>
         </section>
     </body>
 

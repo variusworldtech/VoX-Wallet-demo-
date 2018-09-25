@@ -29,7 +29,7 @@
                                 </div>
                             </div>
                         </div>
-                    <button type="submit" class="btn btn-success">Withdraw now</button>
+                    <button type="submit" class="btn btn-primary">Withdraw now</button>
                 </form>
 			</div>
 		</section>
