@@ -1,6 +1,8 @@
 @extends('layouts.welcome_layout')
-
 @section('content')
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-xs-12 offset-xs-1 col-sm-11 offset-sm-2 col-md-11 offset-md-2 col-lg-8 offset-lg-0">
@@ -61,9 +63,38 @@
                         </div>
                         <a style="color:mediumblue" href="{{URL::to('/register') }}">Need an account? Signup now</a>
                     </form>
+
+                    <br>
+                    <button id="account1" class="btn">Account 1</button>
+                    <button id="account2" class="btn">Account 2</button>
+                    <button id="account3" class="btn">Account 3</button>
+                    <button id="account3" class="btn">Account 4</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+  $(document).ready(function(){
+    $("#account1").click(function() {
+       $("#email").val("s.benjamin@variusworldtech.com");
+       $("#password").val("password");
+    });
+    $("#account2").click(function() {
+       $("#email").val("andy@tenkaisolutions.com");
+       $("#password").val("password");
+    });
+    $("#account3").click(function() {
+       $("#email").val("sherlineserrao@gmail.com");
+       $("#password").val("password");
+    });
+    $("#account4").click(function() {
+       $("#email").val("james@variusworldtech.com");
+       $("#password").val("password");
+    });
+  });
+</script>
+
+
 @endsection
