@@ -18,9 +18,9 @@
 
                             <ul class="icon-list">
                                 <!-- <li><i class="zmdi zmdi-phone"></i></li> -->
-                                <li><i class="zmdi zmdi-email"></i> {{ Auth::user()->email }}</li>
-                                <li><i class="zmdi zmdi-twitter"></i>{{ Auth::user()->email }}</li>
-                                <li><i class="zmdi zmdi-facebook"></i>{{ Auth::user()->email }}</li>
+                                <li><i class="zmdi zmdi-email"></i> href="{{ Auth::user()->email }}</li>
+                                <li><i class="zmdi zmdi-twitter"></i>twitter.com/{{ Auth::user()->name }}</li>
+                                <li><i class="zmdi zmdi-facebook"></i>facebook.com/{{ Auth::user()->name }}</li>
                                 <li><i class="zmdi zmdi-pin"></i>EC2M 4QD</li>
                             </ul>
                         </div>

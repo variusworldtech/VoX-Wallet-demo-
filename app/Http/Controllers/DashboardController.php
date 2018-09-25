@@ -29,7 +29,12 @@ class DashboardController extends Controller
         $credits = $transactions->where('CreditOrDebit', 'Credit')->sum('amount');
         $debits = $transactions->where('CreditOrDebit', 'Debit')->sum('amount');
         $balance = $credits - $debits;
+        $win = null;
 
-        return \View::make('dashboard')->with(compact('transactions', 'balance'));
+        if (isset($_GET['win'])) {
+            $win = $_GET['win'];
+        }
+
+        return \View::make('dashboard')->with(compact('transactions', 'balance', 'win'));
     }
 }

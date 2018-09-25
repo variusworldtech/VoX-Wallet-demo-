@@ -19,7 +19,8 @@ class WinController extends Controller
 
         \Auth::user()->transactions()->save($transaction);
 
-        return redirect('dashboard');
+        $win = rand(0,1);
+        return redirect('dashboard?win='.$win);
     }
 
     public function win()
