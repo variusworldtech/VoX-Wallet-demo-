@@ -141,7 +141,7 @@
 
                     <div class="spacer"></div>
 
-                    <button type="submit" class="btn btn-success">Submit Payment</button>
+                    <button type="submit" class="btn btn-primary">Submit Payment</button>
                 </form>
             </div>
         </div>
