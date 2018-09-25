@@ -37,7 +37,6 @@
                                             <small>
                                                 FEES:<br>
                                                 0 GBP<br>
-                                                2 to 5 days
                                             </small>
                                         </h2>
                                     </div>

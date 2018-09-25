@@ -66,6 +66,7 @@
                                 </button>
                             </div>
                         </div>
+                        <a style="color:mediumblue" href="{{URL::to('/login') }}">Already registered? Login</a>
                     </form>
 
             </div>

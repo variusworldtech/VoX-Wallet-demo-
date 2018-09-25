@@ -3,10 +3,10 @@
             <section id="content">
                 <div class="content--boxed-sm">
                     <header class="content__header">
-                        <h2>{{ Auth::user()->name }} <small></small></h2>
+                        <h1>{{ Auth::user()->name }} <small></small></h1>
                     </header>
 
-                    <div class="card profile">
+                    <div class="well">
                         <div class="profile__img">
                             <img src="{{ Gravatar::fallback('http://urlto.example.com/avatar.jpg')->get(Auth::user()->email) }}" alt="It's {{ Auth::user()->name }}">
 
@@ -17,11 +17,11 @@
                             <p>Tech savvy, love dancing and reading</p>
 
                             <ul class="icon-list">
-                                <li><i class="zmdi zmdi-phone"></i></li>
+                                <!-- <li><i class="zmdi zmdi-phone"></i></li> -->
                                 <li><i class="zmdi zmdi-email"></i> {{ Auth::user()->email }}</li>
-                                <li><i class="zmdi zmdi-twitter"></i></li>
-                                <li><i class="zmdi zmdi-facebook"></i></li>
-                                <li><i class="zmdi zmdi-pin"></i></li>
+                                <li><i class="zmdi zmdi-twitter"></i>{{ Auth::user()->email }}</li>
+                                <li><i class="zmdi zmdi-facebook"></i>{{ Auth::user()->email }}</li>
+                                <li><i class="zmdi zmdi-pin"></i>EC2M 4QD</li>
                             </ul>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                                 </ul>
                             </div>
                         </div> -->
-                    </div>
-                </div>
+                    <!-- </div> -->
+                <!-- </div> -->
             </section>
         @endsection
