@@ -2,11 +2,16 @@
 @section('content')
 
 <section id="content">
-    <div class="well" style="text-align:center"><span style="font-size:72px">{{ number_format ($balance) }}</span> VoX</div>
-    @if ($balance == 0)
-     <a href="/deposit">Ready to play? Load some VoX now</a>
-    @endif
+    <div class="well" style="text-align:center">
+            <?php $vwtSymbol = 'asdfasdf' ?>
+        <span style="font-size:72px">{{ number_format ($balance) }}</span> VoX
+        <div class="pull-right">equivalent to $<span style="">{{ number_format ($balance) }}, or £{{ number_format ($balance/1.3) }}</span></div>
+    </div>
+
     <div class="well">
+            @if ($balance == 0)
+            <a href="/deposit">Ready to play? Load some VoX now</a>
+           @endif
     @if ($transactions->count() != 0)
         <h2>Recent transactions</h2>
 

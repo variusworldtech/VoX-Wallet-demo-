@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <!--[if IE 9 ]><html class="ie9"><![endif]-->
     <head>
         <meta charset="utf-8">
@@ -57,6 +58,8 @@
             }
             .top-search__input{
                 background: #fff;
+            }.top-menu>li>a{
+                font-size: 10pt;
             }
             .card{
                 margin-left: 20px;
@@ -95,7 +98,9 @@
                 height: 35px;
                 background-color: transparent;
                 border: 1px solid #ddd; 
+                color: #222
             }
+
             .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
                 color: #555;
             }
@@ -103,6 +108,20 @@
             {
                 color: #eee;
                 font-size: 24px
+            }
+            /* for custom icons in the nav to render in right place*/
+            .navigation__menu ul>li>a>img {
+                position: absolute;
+                left: 25px;
+                font-size: 22px;
+                top: 2px;
+                width: 25px;
+                text-align: center;
+                padding: 13px 0;
+            }
+            .logo {
+                margin-top: 5px;
+                margin-left: -25px
             }
       #header {
           user-select: none;
