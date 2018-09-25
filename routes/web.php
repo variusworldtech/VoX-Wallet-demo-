@@ -65,4 +65,7 @@ Route::middleware(['auth'])->group(function () {
     //simulate win
     Route::get('/stake', 'WinController@stake');
     Route::get('/win', 'WinController@win');
+
+    //reset users data
+    Route::get('/reset', 'WinController@resetusersdata');
 });

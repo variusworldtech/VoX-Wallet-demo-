@@ -34,4 +34,10 @@ class WinController extends Controller
       
         return redirect('dashboard');
     }
+
+    public function resetusersdata()
+    {
+        \App\Transaction::where('user_id', \Auth::user()->id)->delete();
+        return redirect('dashboard');
+    }
 }

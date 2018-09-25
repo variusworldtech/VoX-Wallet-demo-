@@ -107,7 +107,7 @@
             .balance
             {
                 color: #eee;
-                font-size: 24px
+                font-size: 24px;
             }
             /* for custom icons in the nav to render in right place*/
             .navigation__menu ul>li>a>img {

@@ -4,9 +4,9 @@
 
         <section id="content">
             <div class="well">
-              <h3>Search a user you want to send to.</h3>
+              <h3>Search for a user you want to send to</h3>
               <br>
-              <input type="search" id="search" value="" class="form-control" placeholder="Search for user">
+              <input type="search" id="search" value="" class="form-control" placeholder=" Search for user">
             </div>
             <div id="users-list" class="well hidden">
   
@@ -32,8 +32,13 @@
                     <div class="modal fade" id="{{ $loop->iteration }}" tabindex="-1" role="dialog" aria-labelledby="{{ $loop->iteration }}" aria-hidden="true">
                       <div class="modal-dialog" role="document">
                         <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
                           <div class="modal-body" style="text-align:center">
-                            <p>{{ $user->name }}</p>
+                            <p style="font-size:24px">{{ $user->name }}</p>
                             <p>{{ $user->email }}</p>
 
                             <form action="/send" method="POST" id="{{ $user->name }}">
@@ -43,14 +48,10 @@
                                 <input type="hidden" class="form-control" id="email" name="email" value="{{ $user->email }}">
                                 <input type="hidden" class="form-control" id="user_id" name="user_id" value="{{ $user->id }}">
                                 <label for="amount">Amount</label>
-                                <input type="number" step="0.01" class="form-control" id="amount" name="amount" dusk="amount{{ $user->id }}" placeholder="10" value="5" required min="5" max="{{ (Auth::user()->transactions->where('CreditOrDebit', 'Credit')->sum('amount')) - (Auth::user()->transactions->where('CreditOrDebit', 'Debit')->sum('amount')) }}">
+                                <input type="number" step="0.01" class="form-control" size="20" id="amount" name="amount" dusk="amount{{ $user->id }}" placeholder="10" value="5" required min="5" max="{{ (Auth::user()->transactions->where('CreditOrDebit', 'Credit')->sum('amount')) - (Auth::user()->transactions->where('CreditOrDebit', 'Debit')->sum('amount')) }}">
                               </div>
                               <button type="submit" class="btn btn-primary">Send</button>
                             </form>
-
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                           </div>
                         </div>
                       </div>
