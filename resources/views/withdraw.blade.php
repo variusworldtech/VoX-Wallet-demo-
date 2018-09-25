@@ -17,7 +17,7 @@
 					<div class="well">
 							<h2>Withdraw to paypal</h2>
 								<br/><br/>
-								<a style="background: lightblue" href="/withdrawtobank" class="btn btn-sm btn-default" role="button">Withdraw to paypal</a>
+								<a style="background: lightblue" href="/withdrawtopaypal" class="btn btn-sm btn-default" role="button">Withdraw to paypal</a>
 						</div>
 					
 				</div>

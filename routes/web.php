@@ -42,7 +42,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/withdrawtobank', 'WithdrawToBankController@index');
     Route::post('/withdrawToBankAttempt', 'WithdrawToBankController@withdraw');
 
-
+    Route::get('/withdrawtopaypal', 'WithdrawToPaypalController@index');
+    Route::post('/withdrawToPayPalAttempt', 'WithdrawToPaypalController@withdraw');
+    
     Route::post('/send', 'SendController@send');
     Route::get('/send', 'SendController@index');
 
