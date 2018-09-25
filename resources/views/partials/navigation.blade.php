@@ -6,21 +6,23 @@
 
                 <div class="navigation__menu c-overflow">
                     <ul>
-                      
+                        <li <?php if (strpos($uri, "/dashboard") === 0) {echo(' class="navigation__active"');} ?>>
+                            <a href="/dashboard"><img style="width:25px" src="{{ asset('img/icons/dashboard_icon.png') }}"/> Dashboard</a>
+                        </li>
                         <li <?php if (strpos($uri, "/deposit") === 0) {echo(' class="navigation__active"');} ?>>
-                            <a href="/deposit"><i class="zmdi zmdi-upload"></i> Get VoX</a>
+                            <a href="/deposit"><img style="width:20px" src="{{ asset('img/icons/deposit_icon.png') }}"/> Deposit</a>
                         </li>
                         <li <?php if (strpos($uri, "/withdraw") === 0) {echo(' class="navigation__active"');} ?>>
-                            <a href="/withdraw"><i class="zmdi zmdi-arrow-back"></i> Withdraw</a>
+                            <a href="/withdraw"><img style="width:20px" src="{{ asset('img/icons/withdraw_icon.png') }}"/> Withdraw</a>
                         </li>
                         <li <?php if ($uri == "/send") {echo(' class="navigation__active"');} ?>>
-                            <a href="/send"><i class="zmdi zmdi-arrow-forward"></i> Send</a>
+                            <a href="/send"><img style="width:20px" src="{{ asset('img/icons/transfer_icon.png') }}"/> Send</a>
                         </li>
-                        <li  <?php if ($uri == "/card") {echo(' class="navigation__active"');} ?>>
-                            <a href="/card"><i class="zmdi zmdi-card"></i> VoX Card</a>
+                        <li <?php if ($uri == "/card") {echo(' class="navigation__active"');} ?>>
+                            <a href="/card"><img style="width:20px" src="{{ asset('img/icons/vox_card-icon.png') }}"/> VoX Card</a>
                         </li>
                         <li  <?php if ($uri == "/transactions") {echo(' class="navigation__active"');} ?>>
-                            <a href="/transactions"><i class="zmdi zmdi-wrap-text"></i>Transactions</a>
+                            <a href="/transactions"><img style="width:20px" src="{{ asset('img/icons/transactions_icon.png') }}"/> Transactions</a>
                         </li>
                         <!-- <li <?php if ($uri == "/settings") {echo(' class="navigation__active"');} ?>>
                             <a href="/settings"><i class="zmdi zmdi-widgets"></i> Settings</a>
